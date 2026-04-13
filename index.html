@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAKI GROUP | Groupe Sénégalais d'Entreprises</title>
+    <meta name="description" content="GAKI GROUP – Groupe sénégalais d'entreprises en création, basé à Dakar. Innovation, Services, Industrie, Logistique, Digital et Consulting.">
+
+    <!-- Tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Oswald:wght@400;500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- ================================
+     NAVBAR
+================================ -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="#top" class="nav-brand">
+            <img src="images/logo.jpeg" alt="Logo GAKI GROUP">
+            <span>GAKI GROUP</span>
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#about" class="nav-link">À propos</a></li>
+            <li><a href="#filiales" class="nav-link">Filiales</a></li>
+            <li><a href="#domaines" class="nav-link">Activités</a></li>
+            <li><a href="#equipe" class="nav-link">Équipe</a></li>
+            <li><a href="#chiffres" class="nav-link">Chiffres</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <a href="#contact" class="nav-cta">Nous rejoindre</a>
+    </div>
+</nav>
+
+<!-- ================================
+     HERO
+================================ -->
+<header class="hero-bg" id="top">
+    <div class="hero-particles">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="hero-content">
+        <img src="images/logo.jpeg" alt="Logo GAKI GROUP" class="hero-logo animate-fadeIn">
+        <div class="hero-badge animate-fadeIn animation-delay-200">
+            <i class="fas fa-map-marker-alt"></i>&nbsp; Fondé à Dakar · Vision Panafricaine
+        </div>
+        <h1 class="animate-fadeIn animation-delay-300">GAKI GROUP</h1>
+        <h2 class="animate-fadeIn animation-delay-400" id="hero-tagline">Bâtissons l'avenir du Sénégal, ensemble.</h2>
+        <p class="animate-fadeIn animation-delay-500">
+            Groupe d'entreprises sénégalais en pleine émergence — Innovation, Services, Industrie &amp; Digital au service du développement national et panafricain.
+        </p>
+        <div class="hero-buttons animate-fadeIn animation-delay-600">
+            <a href="#filiales" class="btn-hero-primary">
+                <i class="fas fa-building mr-2"></i>Nos filiales
+            </a>
+            <a href="#contact" class="btn-hero-secondary">
+                <i class="fas fa-envelope mr-2"></i>Nous contacter
+            </a>
+        </div>
+        <div class="hero-stats animate-fadeIn animation-delay-700">
+            <div class="hero-stat-item">
+                <span class="hero-stat-num">6</span>
+                <span class="hero-stat-label">Filiales</span>
+            </div>
+            <div class="hero-stat-sep">·</div>
+            <div class="hero-stat-item">
+                <span class="hero-stat-num">100+</span>
+                <span class="hero-stat-label">Emplois</span>
+            </div>
+            <div class="hero-stat-sep">·</div>
+            <div class="hero-stat-item">
+                <span class="hero-stat-num">2026</span>
+                <span class="hero-stat-label">Lancement</span>
+            </div>
+        </div>
+        <a href="#about" class="hero-scroll-indicator animate-fadeIn animation-delay-800">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </div>
+    <div class="hero-wave">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,40 C360,0 720,80 1080,40 C1260,20 1380,60 1440,50 L1440,80 L0,80 Z" fill="#ffffff"/>
+        </svg>
+    </div>
+</header>
+
+<main>
+
+<!-- ================================
+     À PROPOS
+================================ -->
+<section id="about" class="about-section">
+    <div class="about-bg-overlay"></div>
+    <div class="max-w-6xl mx-auto relative z-10">
+        <div class="text-center mb-14 animate-on-scroll">
+            <span class="section-badge">Notre histoire</span>
+            <h2>À propos de GAKI GROUP</h2>
+            <div class="section-divider mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-on-scroll">
+            <div>
+                <p class="text-lg leading-relaxed text-gray-800 mb-6">
+                    <strong>GAKI GROUP</strong> est un groupe sénégalais d'entreprises en cours de création, porté par une vision ambitieuse : devenir un acteur incontournable du développement économique au <strong>Sénégal</strong> et en Afrique de l'Ouest.
+                </p>
+                <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                    Ancré à <strong>Dakar</strong>, cœur économique du Sénégal, notre groupe rassemble <strong>6 filiales complémentaires</strong> couvrant les secteurs stratégiques : du digital à la logistique, du conseil à l'industrie.
+                </p>
+                <p class="text-lg leading-relaxed text-gray-700 mb-8">
+                    Notre ambition : créer des emplois de qualité, accompagner les PME locales, et positionner le <em>Sénégal</em> comme un hub d'excellence en Afrique de l'Ouest.
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <span class="tag-badge"><i class="fas fa-map-marker-alt mr-2"></i>Dakar, Sénégal</span>
+                    <span class="tag-badge"><i class="fas fa-globe-africa mr-2"></i>Vision panafricaine</span>
+                    <span class="tag-badge"><i class="fas fa-seedling mr-2"></i>Lancement 2026</span>
+                </div>
+            </div>
+            <div class="about-stat-grid">
+                <div class="about-stat">
+                    <i class="fas fa-briefcase"></i>
+                    <div class="about-stat-number">6</div>
+                    <div class="about-stat-label">Filiales en projet</div>
+                </div>
+                <div class="about-stat">
+                    <i class="fas fa-handshake"></i>
+                    <div class="about-stat-number">15+</div>
+                    <div class="about-stat-label">Partenaires cibles</div>
+                </div>
+                <div class="about-stat">
+                    <i class="fas fa-users"></i>
+                    <div class="about-stat-number">100+</div>
+                    <div class="about-stat-label">Emplois projetés</div>
+                </div>
+                <div class="about-stat">
+                    <i class="fas fa-flag"></i>
+                    <div class="about-stat-number">2026</div>
+                    <div class="about-stat-label">Année de lancement</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================================
+     FILIALES
+================================ -->
+<section id="filiales" class="page-section" style="background:#F8F7FA;">
+    <div class="section-container animate-on-scroll">
+        <div class="section-header">
+            <span class="section-badge">Notre structure</span>
+            <h2>Nos 6 filiales</h2>
+            <div class="section-divider mx-auto"></div>
+            <p class="section-intro">Chaque filiale est une entité spécialisée, conçue pour répondre aux besoins stratégiques du marché sénégalais et ouest-africain.</p>
+        </div>
+
+        <ul class="filiales-grid">
+
+            <li class="filiale-card fc-connect">
+                <div class="filiale-card-header">
+                    <span class="fc-num">01</span>
+                    <div class="filiale-icon-wrap"><i class="fas fa-satellite"></i></div>
+                </div>
+                <div class="filiale-card-body">
+                    <span class="filiale-sector-tag">FAI &amp; Souveraineté Numérique</span>
+                    <h4>GAKI Connect</h4>
+                    <p>Fournisseur d'Accès Internet (FAI) en cours d'agrément. Infrastructure multi-orbite GEO/LEO avec <em>landing local</em> intégral — les données nationales ne quittent jamais le territoire sénégalais.</p>
+                    <div class="filiale-card-line"></div>
+                </div>
+            </li>
+
+            <li class="filiale-card fc-services">
+                <div class="filiale-card-header">
+                    <span class="fc-num">02</span>
+                    <div class="filiale-icon-wrap"><i class="fas fa-concierge-bell"></i></div>
+                </div>
+                <div class="filiale-card-body">
+                    <span class="filiale-sector-tag">Services BtoB</span>
+                    <h4>GAKI Services</h4>
+                    <p>Services professionnels sur mesure : assistance, externalisation et accompagnement quotidien des PME locales sénégalaises.</p>
+                    <div class="filiale-card-line"></div>
+                </div>
+            </li>
+
+            <li class="filiale-card fc-industries">
+                <div class="filiale-card-header">
+                    <span class="fc-num">03</span>
+                    <div class="filiale-icon-wrap"><i class="fas fa-industry"></i></div>
+                </div>
+                <div class="filiale-card-body">
+                    <span class="filiale-sector-tag">Production locale</span>
+                    <h4>GAKI Industries</h4>
+                    <p>Unité de production et transformation industrielle valorisant les ressources locales pour stimuler l'économie sénégalaise.</p>
+                    <div class="filiale-card-line"></div>
+                </div>
+            </li>
+
+            <li class="filiale-card fc-logistics">
+                <div class="filiale-card-header">
+                    <span class="fc-num">04</span>
+                    <div class="filiale-icon-wrap"><i class="fas fa-truck"></i></div>
+                </div>
+                <div class="filiale-card-body">
+                    <span class="filiale-sector-tag">Transport &amp; CEDEAO</span>
+                    <h4>GAKI Logistics</h4>
+                    <p>Solutions logistiques couvrant le Sénégal et la CEDEAO pour optimiser vos chaînes d'approvisionnement et réduire vos coûts.</p>
+                    <div class="filiale-card-line"></div>
+                </div>
+            </li>
+
+            <li class="filiale-card fc-digital">
+                <div class="filiale-card-header">
+                    <span class="fc-num">05</span>
+                    <div class="filiale-icon-wrap"><i class="fas fa-laptop-code"></i></div>
+                </div>
+                <div class="filiale-card-body">
+                    <span class="filiale-sector-tag">Tech &amp; Innovation</span>
+                    <h4>GAKI Digital</h4>
+                    <p>Développement de solutions numériques, applications mobiles et plateformes web innovantes adaptées aux besoins africains.</p>
+                    <div class="filiale-card-line"></div>
+                </div>
+            </li>
+
+            <li class="filiale-card fc-consulting">
+                <div class="filiale-card-header">
+                    <span class="fc-num">06</span>
+                    <div class="filiale-icon-wrap"><i class="fas fa-chart-bar"></i></div>
+                </div>
+                <div class="filiale-card-body">
+                    <span class="filiale-sector-tag">Conseil stratégique</span>
+                    <h4>GAKI Consulting</h4>
+                    <p>Expertise en transformation organisationnelle et accompagnement des entreprises sénégalaises dans leur croissance régionale.</p>
+                    <div class="filiale-card-line"></div>
+                </div>
+            </li>
+
+        </ul>
+    </div><!-- /section-container -->
+</section>
+
+<!-- ================================
+     DOMAINES D'ACTIVITÉ
+================================ -->
+<section id="domaines" class="domaines-section">
+    <div class="section-container animate-on-scroll">
+        <div class="section-header">
+            <span class="section-badge">Nos expertises</span>
+            <h2>Nos domaines d'activité</h2>
+            <div class="section-divider mx-auto"></div>
+            <p class="section-intro">Quatre axes stratégiques complémentaires pour accompagner le développement économique du Sénégal et de la sous-région ouest-africaine.</p>
+        </div>
+
+        <div class="domaines-grid">
+
+            <div class="domaine-card dc-conseil">
+                <div class="domaine-side">
+                    <span class="domaine-num">01</span>
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="domaine-content">
+                    <h3>Conseil &amp; Stratégie</h3>
+                    <p>Accompagnement stratégique personnalisé des PME et ETI sénégalaises pour optimiser leur croissance et conquérir les marchés régionaux de la sous-région.</p>
+                    <div class="domaine-tags">
+                        <span>Planification</span>
+                        <span>Croissance</span>
+                        <span>PME Sénégal</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="domaine-card dc-digital">
+                <div class="domaine-side">
+                    <span class="domaine-num">02</span>
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="domaine-content">
+                    <h3>Innovation Digitale</h3>
+                    <p>Développement de solutions numériques pour accélérer la transformation digitale des entreprises sénégalaises et des organisations de la sous-région.</p>
+                    <div class="domaine-tags">
+                        <span>Tech</span>
+                        <span>Digital</span>
+                        <span>Innovation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="domaine-card dc-industrie">
+                <div class="domaine-side">
+                    <span class="domaine-num">03</span>
+                    <i class="fas fa-industry"></i>
+                </div>
+                <div class="domaine-content">
+                    <h3>Industrie &amp; Logistique</h3>
+                    <p>Développement industriel local et solutions logistiques performantes pour fluidifier les échanges commerciaux au Sénégal, en CEDEAO et au-delà.</p>
+                    <div class="domaine-tags">
+                        <span>Industrie</span>
+                        <span>Transport</span>
+                        <span>CEDEAO</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="domaine-card dc-services">
+                <div class="domaine-side">
+                    <span class="domaine-num">04</span>
+                    <i class="fas fa-users-cog"></i>
+                </div>
+                <div class="domaine-content">
+                    <h3>Services Professionnels</h3>
+                    <p>Offre B2B complète et sur mesure, adaptée aux besoins spécifiques des entreprises sénégalaises et des investisseurs présents dans la sous-région.</p>
+                    <div class="domaine-tags">
+                        <span>B2B</span>
+                        <span>Externalisation</span>
+                        <span>Sénégal</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================================
+     ÉQUIPE
+================================ -->
+<section id="equipe" class="page-section" style="background:#F8F7FA;">
+    <div class="section-container animate-on-scroll">
+        <div class="section-header">
+            <span class="section-badge">L'équipe dirigeante</span>
+            <h2>Notre équipe dirigeante</h2>
+            <div class="section-divider mx-auto"></div>
+            <p class="section-intro">Une équipe pluridisciplinaire réunie autour d'une vision commune : faire rayonner le Sénégal sur la scène économique africaine et mondiale.</p>
+        </div>
+
+        <!-- Fondateur & Présidence -->
+        <div class="team-grid-founder">
+            <div class="team-card team-card-featured founder-main">
+                <div class="team-avatar av-gaki">JPL</div>
+                <div class="founder-badge">Fondateur &amp; Président</div>
+                <h3 class="text-xl font-semibold text-gaki-purple mt-4 mb-1">Joseph Pascal Doliveira Lankiane</h3>
+                <p class="text-gaki-red font-medium mb-3 text-sm">Fondateur &amp; Président de GAKI GROUP</p>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    Visionnaire et entrepreneur sénégalais, initiateur du projet GAKI Connect — candidat à la licence FAI pour la souveraineté numérique nationale avec une infrastructure multi-orbite GEO/LEO.
+                </p>
+                <div class="founder-contact-line">
+                    <span><i class="fas fa-phone mr-1"></i>+221 76 291 31 21</span>
+                    <span><i class="fas fa-envelope mr-1"></i>gakigroup@outlook.com</span>
+                </div>
+                <div class="team-socials">
+                    <a href="mailto:gakigroup@outlook.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://wa.me/221762913121" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar av-blue">AW</div>
+                <div class="team-role-badge">Co-fondateur</div>
+                <h3 class="text-lg font-semibold text-gaki-purple mt-4 mb-1">Anthony WOLFGAN</h3>
+                <p class="text-gaki-red font-medium mb-3 text-sm">Co-fondateur &amp; CTO</p>
+                <p class="text-gray-500 text-sm leading-relaxed">Expertise Infrastructure NexusWave/Viasat. Architecte des solutions techniques et de l'infrastructure réseau du groupe.</p>
+                <div class="team-socials">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar av-red">GD</div>
+                <div class="team-role-badge">Co-fondatrice</div>
+                <h3 class="text-lg font-semibold text-gaki-purple mt-4 mb-1">Germaine DIATTA</h3>
+                <p class="text-gaki-red font-medium mb-3 text-sm">Co-fondatrice &amp; Dir. Communication</p>
+                <p class="text-gray-500 text-sm leading-relaxed">Impact Social &amp; Inclusion. Pilote la stratégie de communication et le civisme du groupe.</p>
+                <div class="team-socials">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Équipe dirigeante -->
+        <div class="team-grid-members">
+
+            <div class="team-card team-member-card">
+                <div class="team-member-icon tmi-green">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Jaurès THAO</h3>
+                <p class="team-member-role">Chief Cybersecurity Officer (CSO)</p>
+                <p class="team-member-desc">Responsable de la souveraineté et de l'intégrité des données nationales.</p>
+            </div>
+
+            <div class="team-card team-member-card">
+                <div class="team-member-icon tmi-orange">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h3>Thomas NSOLEY</h3>
+                <p class="team-member-role">Lead Systems Engineer</p>
+                <p class="team-member-desc">Maintenance &amp; Supervision IA — Garant de la résilience du réseau 24h/24.</p>
+            </div>
+
+            <div class="team-card team-member-card">
+                <div class="team-member-icon tmi-purple">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+                <h3>Alain SAMBOU</h3>
+                <p class="team-member-role">Secrétaire Général</p>
+                <p class="team-member-desc">Administration, Conformité &amp; Rigueur Institutionnelle.</p>
+            </div>
+
+            <div class="team-card team-member-card">
+                <div class="team-member-icon tmi-blue">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Mathy NDIAYE</h3>
+                <p class="team-member-role">Directrice GAKI Academy</p>
+                <p class="team-member-desc">Formation, Certification &amp; Excellence Opérationnelle.</p>
+            </div>
+
+            <div class="team-card team-member-card">
+                <div class="team-member-icon tmi-violet">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <h3>Jean Marie DIATTA</h3>
+                <p class="team-member-role">Senior Advisor – Relations Institutionnelles</p>
+                <p class="team-member-desc">Liaison État et Régulateurs.</p>
+            </div>
+
+            <div class="team-card team-member-card">
+                <div class="team-member-icon tmi-red">
+                    <i class="fas fa-globe-africa"></i>
+                </div>
+                <h3>Davis HOPE</h3>
+                <p class="team-member-role">Dir. Développement International</p>
+                <p class="team-member-desc">Partenariats Mondiaux &amp; Expansion internationale du groupe.</p>
+            </div>
+
+        </div>
+    </div><!-- /section-container -->
+</section>
+
+<!-- ================================
+     CHIFFRES CLÉS
+================================ -->
+<section id="chiffres" class="stats-section page-section">
+    <div class="section-container animate-on-scroll">
+        <div class="section-header">
+            <span class="section-badge section-badge-light">Notre vision en chiffres</span>
+            <h2 class="text-white">GAKI GROUP en chiffres</h2>
+            <div class="section-divider mx-auto divider-white"></div>
+        </div>
+        <div class="stats-grid" style="display:grid; grid-template-columns:repeat(4,1fr); gap:2rem;">
+            <div class="stat-card-new">
+                <div class="stat-icon"><i class="fas fa-building"></i></div>
+                <div class="stat-number counter" data-target="6">0</div>
+                <p class="stat-label">Filiales</p>
+                <p class="stat-sublabel">En cours de création</p>
+            </div>
+            <div class="stat-card-new">
+                <div class="stat-icon"><i class="fas fa-users"></i></div>
+                <div class="stat-number counter" data-target="100">0</div>
+                <p class="stat-label">Emplois projetés</p>
+                <p class="stat-sublabel">D'ici fin 2027</p>
+            </div>
+            <div class="stat-card-new">
+                <div class="stat-icon"><i class="fas fa-handshake"></i></div>
+                <div class="stat-number counter" data-target="15">0</div>
+                <p class="stat-label">Partenaires cibles</p>
+                <p class="stat-sublabel">Sénégal &amp; CEDEAO</p>
+            </div>
+            <div class="stat-card-new">
+                <div class="stat-icon"><i class="fas fa-globe-africa"></i></div>
+                <div class="stat-number counter" data-target="5">0</div>
+                <p class="stat-label">Pays ciblés</p>
+                <p class="stat-sublabel">Afrique de l'Ouest</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================================
+     PROJETS EN DÉVELOPPEMENT
+================================ -->
+<section class="page-section" style="background:#fff;">
+    <div class="section-container animate-on-scroll">
+        <div class="section-header">
+            <span class="section-badge">Nos projets</span>
+            <h2>Projets en développement</h2>
+            <div class="section-divider mx-auto"></div>
+            <p class="section-intro">Des initiatives concrètes ancrées dans la réalité sénégalaise, au service du développement national.</p>
+        </div>
+        <div class="projects-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.75rem;">
+            <div class="project-card-new">
+                <div class="project-icon-wrap picon-purple">
+                    <i class="fas fa-city text-white text-3xl"></i>
+                </div>
+                <span class="project-badge pbadge-red">EN COURS</span>
+                <h3>Hub Digital Dakar</h3>
+                <p>Création d'un hub numérique à Dakar pour accompagner les startups sénégalaises et former les talents du digital de demain.</p>
+                <div class="project-tags">
+                    <span class="tag-sm tag-purple">Tech</span>
+                    <span class="tag-sm tag-red">Startups</span>
+                    <span class="tag-sm tag-accent">Formation</span>
+                </div>
+                <div class="project-location"><i class="fas fa-map-marker-alt mr-2"></i>Dakar, Sénégal · 2026</div>
+            </div>
+
+            <div class="project-card-new">
+                <div class="project-icon-wrap picon-red">
+                    <i class="fas fa-store text-white text-3xl"></i>
+                </div>
+                <span class="project-badge pbadge-purple">PLANIFIÉ</span>
+                <h3>Programme PME Sénégal</h3>
+                <p>Accompagnement de 50 PME dans leur transition numérique et leur développement commercial à l'échelle de la CEDEAO.</p>
+                <div class="project-tags">
+                    <span class="tag-sm tag-purple">PME</span>
+                    <span class="tag-sm tag-red">Digital</span>
+                    <span class="tag-sm tag-accent">Commerce</span>
+                </div>
+                <div class="project-location"><i class="fas fa-map-marker-alt mr-2"></i>Sénégal · 2026–2027</div>
+            </div>
+
+            <div class="project-card-new">
+                <div class="project-icon-wrap picon-green">
+                    <i class="fas fa-shipping-fast text-white text-3xl"></i>
+                </div>
+                <span class="project-badge pbadge-accent">ÉTUDE</span>
+                <h3>Corridor Logistique CEDEAO</h3>
+                <p>Corridor logistique reliant le Sénégal au Mali, à la Guinée et à la Mauritanie pour fluidifier les échanges sous-régionaux.</p>
+                <div class="project-tags">
+                    <span class="tag-sm tag-purple">Logistique</span>
+                    <span class="tag-sm tag-red">CEDEAO</span>
+                    <span class="tag-sm tag-accent">Commerce</span>
+                </div>
+                <div class="project-location"><i class="fas fa-map-marker-alt mr-2"></i>Afrique de l'Ouest · 2027</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================================
+     VISION & VALEURS
+================================ -->
+<section class="page-section" style="background:#F8F7FA;">
+    <div class="section-container animate-on-scroll">
+        <div class="section-header">
+            <span class="section-badge">Ce qui nous guide</span>
+            <h2>Vision &amp; Valeurs</h2>
+            <div class="section-divider mx-auto"></div>
+            <p class="section-intro">Portés par les valeurs qui font la force du Sénégal — le <strong>teranga</strong>, l'excellence et la solidarité — nous construisons un groupe qui sera une fierté nationale et un modèle panafricain.</p>
+        </div>
+
+        <div class="values-grid" style="display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem;">
+            <div class="value-card-new">
+                <div class="value-icon vicon-purple">
+                    <i class="fas fa-star text-white text-2xl"></i>
+                </div>
+                <h4>Excellence</h4>
+                <p>La qualité comme standard inégociable dans tout ce que nous faisons</p>
+            </div>
+            <div class="value-card-new">
+                <div class="value-icon vicon-red">
+                    <i class="fas fa-heart text-white text-2xl"></i>
+                </div>
+                <h4>Teranga</h4>
+                <p>L'hospitalité sénégalaise au cœur de nos relations d'affaires</p>
+            </div>
+            <div class="value-card-new">
+                <div class="value-icon vicon-green">
+                    <i class="fas fa-lightbulb text-white text-2xl"></i>
+                </div>
+                <h4>Innovation</h4>
+                <p>Penser local, agir continental — des solutions adaptées à l'Afrique</p>
+            </div>
+            <div class="value-card-new">
+                <div class="value-icon vicon-gold">
+                    <i class="fas fa-globe-africa text-white text-2xl"></i>
+                </div>
+                <h4>Impact</h4>
+                <p>Créer de la valeur durable pour le Sénégal et ses populations</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================================
+     ACTUALITÉS
+================================ -->
+<section class="page-section" style="background:#fff;">
+    <div class="section-container animate-on-scroll">
+        <div class="section-header">
+            <span class="section-badge">Restez informé</span>
+            <h2>Actualités &amp; Événements</h2>
+            <div class="section-divider mx-auto"></div>
+        </div>
+        <div class="news-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.75rem;">
+            <article class="news-card-new">
+                <div class="news-img-placeholder nimg-purple">
+                    <i class="fas fa-flag text-white text-4xl"></i>
+                </div>
+                <div class="news-content">
+                    <span class="news-tag ntag-red">LANCEMENT</span>
+                    <h3>Lancement officiel de GAKI GROUP</h3>
+                    <p>GAKI GROUP annonce son lancement officiel à Dakar avec une cérémonie réunissant les acteurs économiques sénégalais et les futurs partenaires du groupe.</p>
+                    <div class="news-date"><i class="fas fa-calendar-alt mr-2"></i>2026 · Dakar, Sénégal</div>
+                </div>
+            </article>
+
+            <article class="news-card-new">
+                <div class="news-img-placeholder nimg-red">
+                    <i class="fas fa-handshake text-white text-4xl"></i>
+                </div>
+                <div class="news-content">
+                    <span class="news-tag ntag-purple">PARTENARIAT</span>
+                    <h3>Alliance avec les acteurs locaux sénégalais</h3>
+                    <p>GAKI GROUP engage des discussions avec plusieurs institutions et investisseurs locaux pour renforcer son ancrage dans l'économie nationale.</p>
+                    <div class="news-date"><i class="fas fa-calendar-alt mr-2"></i>2026 · Dakar, Sénégal</div>
+                </div>
+            </article>
+
+            <article class="news-card-new">
+                <div class="news-img-placeholder nimg-green">
+                    <i class="fas fa-users text-white text-4xl"></i>
+                </div>
+                <div class="news-content">
+                    <span class="news-tag ntag-accent">RECRUTEMENT</span>
+                    <h3>Nous recrutons des talents sénégalais</h3>
+                    <p>GAKI GROUP ouvre ses portes aux talents locaux. Rejoignez une équipe ambitieuse et contribuez à bâtir le groupe phare du Sénégal de demain.</p>
+                    <div class="news-date"><i class="fas fa-calendar-alt mr-2"></i>Candidatures ouvertes · Dakar</div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ================================
+     CONTACT
+================================ -->
+<section id="contact" class="page-section" style="background:#F8F7FA;">
+    <div class="section-container animate-on-scroll">
+        <div class="section-header">
+            <span class="section-badge">Parlons-nous</span>
+            <h2>Contactez-nous</h2>
+            <div class="section-divider mx-auto"></div>
+        </div>
+
+        <div class="contact-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:3.5rem; align-items:start;">
+            <!-- Informations -->
+            <div class="space-y-8">
+                <div>
+                    <h3 class="text-2xl font-semibold text-gaki-purple mb-6" style="border:none; padding:0;">Nos coordonnées</h3>
+                    <div class="space-y-5">
+                        <div class="contact-info-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h4>Adresse</h4>
+                                <p>Plateau, Rue de Thiong<br>Dakar, Sénégal</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <div>
+                                <h4>Téléphone</h4>
+                                <p><a href="tel:+221762913121" style="color:inherit;">+221 76 291 31 21</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:gakigroup@outlook.com" style="color:inherit;">gakigroup@outlook.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h4>Horaires d'ouverture</h4>
+                                <p>Lundi – Vendredi : 8h00 – 18h00<br>Samedi : 9h00 – 13h00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt text-5xl mb-4 opacity-80"></i>
+                    <p class="font-bold text-lg">Plateau, Dakar – Sénégal</p>
+                    <p class="text-sm opacity-75 mt-1">Cœur économique de la capitale sénégalaise</p>
+                    <a href="https://maps.google.com/?q=Plateau+Dakar+Senegal" target="_blank" rel="noopener noreferrer" class="map-btn">
+                        <i class="fas fa-external-link-alt mr-2"></i>Voir sur Google Maps
+                    </a>
+                </div>
+            </div>
+
+            <!-- Formulaire -->
+            <div class="contact-form-card">
+                <h3 class="text-2xl font-semibold text-gaki-purple mb-6" style="border:none; padding:0;">Envoyez-nous un message</h3>
+                <form action="mailto:gakigroup@outlook.com" method="post" enctype="text/plain" class="space-y-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label for="nom" class="form-label">Nom et prénom *</label>
+                            <input type="text" id="nom" name="Nom" required class="form-input" placeholder="Mamadou Diallo">
+                        </div>
+                        <div>
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" name="Email" required class="form-input" placeholder="vous@exemple.sn">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="telephone" class="form-label">Téléphone</label>
+                        <input type="tel" id="telephone" name="Telephone" class="form-input" placeholder="+221 77 XXX XX XX">
+                    </div>
+                    <div>
+                        <label for="sujet" class="form-label">Sujet</label>
+                        <select id="sujet" name="Sujet" class="form-input">
+                            <option value="">Choisissez un sujet</option>
+                            <option value="Partenariat">Partenariat commercial</option>
+                            <option value="Services">Demande de services</option>
+                            <option value="Recrutement">Candidature / Recrutement</option>
+                            <option value="Investissement">Investissement</option>
+                            <option value="Presse">Presse &amp; Médias</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="message" class="form-label">Message *</label>
+                        <textarea id="message" name="Message" rows="5" required class="form-input resize-none" placeholder="Décrivez votre projet ou votre demande..."></textarea>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <input type="checkbox" id="rgpd" name="RGPD" required class="mt-1 flex-shrink-0" style="width:18px;height:18px;accent-color:var(--gaki-purple);">
+                        <label for="rgpd" class="text-sm text-gray-500 leading-relaxed">
+                            J'accepte que mes données soient traitées conformément à la politique de confidentialité de GAKI GROUP.
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-paper-plane mr-2"></i>Envoyer le message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ================================
+     FOOTER
+================================ -->
+<footer class="footer-main pt-16 pb-8 px-4">
+    <div class="max-w-6xl mx-auto">
+        <div class="footer-grid" style="display:grid; grid-template-columns:repeat(4,1fr); gap:2.5rem; margin-bottom:3.5rem;">
+
+            <!-- Brand -->
+            <div>
+                <div class="flex items-center mb-5">
+                    <img src="images/logo.jpeg" alt="GAKI GROUP" class="w-10 h-10 rounded-full mr-3 object-contain border-2 border-white border-opacity-20">
+                    <span class="font-title text-xl text-white">GAKI GROUP</span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                    Groupe sénégalais d'entreprises en pleine émergence, ancré à Dakar avec une vision panafricaine ambitieuse.
+                </p>
+                <div class="flex space-x-3">
+                    <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Filiales -->
+            <div>
+                <h4 class="footer-title">Nos Filiales</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="#filiales" class="footer-link"><i class="fas fa-angle-right mr-2 text-gaki-accent"></i>GAKI Connect</a></li>
+                    <li><a href="#filiales" class="footer-link"><i class="fas fa-angle-right mr-2 text-gaki-accent"></i>GAKI Services</a></li>
+                    <li><a href="#filiales" class="footer-link"><i class="fas fa-angle-right mr-2 text-gaki-accent"></i>GAKI Industries</a></li>
+                    <li><a href="#filiales" class="footer-link"><i class="fas fa-angle-right mr-2 text-gaki-accent"></i>GAKI Logistics</a></li>
+                    <li><a href="#filiales" class="footer-link"><i class="fas fa-angle-right mr-2 text-gaki-accent"></i>GAKI Digital</a></li>
+                    <li><a href="#filiales" class="footer-link"><i class="fas fa-angle-right mr-2 text-gaki-accent"></i>GAKI Consulting</a></li>
+                </ul>
+            </div>
+
+            <!-- Navigation -->
+            <div>
+                <h4 class="footer-title">Navigation</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="#about" class="footer-link"><i class="fas fa-angle-right mr-2 text-gaki-accent"></i>À propos</a></li>
+                    <li><a href="#domaines" class="footer-link"><i class="fas fa-angle-right mr-2 text-gaki-accent"></i>Nos activités</a></li>
+                    <li><a href="#equipe" class="footer-link"><i class="fas fa-angle-right mr-2 text-gaki-accent"></i>Notre équipe</a></li>
+                    <li><a href="#chiffres" class="footer-link"><i class="fas fa-angle-right mr-2 text-gaki-accent"></i>Chiffres clés</a></li>
+                    <li><a href="#contact" class="footer-link"><i class="fas fa-angle-right mr-2 text-gaki-accent"></i>Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h4 class="footer-title">Contact</h4>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt mt-1 flex-shrink-0" style="color: var(--gaki-accent);"></i>
+                        <span>Plateau, Rue de Thiong<br>Dakar, Sénégal</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-phone flex-shrink-0" style="color: var(--gaki-accent);"></i>
+                        <a href="tel:+221762913121" class="footer-link" style="color:#9CA3AF;">+221 76 291 31 21</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-envelope flex-shrink-0" style="color: var(--gaki-accent);"></i>
+                        <a href="mailto:gakigroup@outlook.com" class="footer-link" style="color:#9CA3AF;">gakigroup@outlook.com</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-clock flex-shrink-0" style="color: var(--gaki-accent);"></i>
+                        <span>Lun – Ven : 8h00 – 18h00</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="footer-bottom">
+            <p class="text-gray-500 text-sm text-center md:text-left">
+                © 2026 GAKI GROUP – Tous droits réservés · Dakar, Sénégal
+            </p>
+            <div class="flex flex-wrap justify-center gap-5 text-sm">
+                <a href="#" class="text-gray-500 hover:text-white transition-colors">Politique de confidentialité</a>
+                <a href="#" class="text-gray-500 hover:text-white transition-colors">Conditions d'utilisation</a>
+                <a href="#" class="text-gray-500 hover:text-white transition-colors">Mentions légales</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/221762913121" target="_blank" rel="noopener noreferrer" class="whatsapp-float" title="Contactez-nous sur WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Scroll to Top -->
+<button class="scroll-top-btn" id="scrollTopBtn" title="Retour en haut" aria-label="Retour en haut">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="Code/script.js"></script>
+</body>
+</html>
