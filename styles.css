@@ -7,24 +7,27 @@
    VARIABLES
 ================================ */
 :root {
-    /* === CHARTE OFFICIELLE GAKI GROUP === */
-    --gaki-purple: #58337F;
-    --gaki-purple-light: #7B55A0;
-    --gaki-purple-dark: #3d2259;
-    --gaki-red: #C1272D;
-    --gaki-red-dark: #9A1E24;
+    /* === CHARTE OFFICIELLE GAKI GROUP – VIOLET / ROUGE (en harmonie avec le logo) === */
+    --gaki-purple: #4A2C7F;          /* Violet profond (logo) */
+    --gaki-purple-light: #6B44A8;    /* Violet intermédiaire */
+    --gaki-purple-dark: #2D1B50;     /* Violet sombre */
+    --gaki-red: #C12735;             /* Rouge/Cramoisi (logo) */
+    --gaki-red-dark: #9B1E2B;        /* Rouge foncé */
     --gaki-black: #000000;
     --gaki-white: #FFFFFF;
-    --gaki-gray-light: #F8F7FA;
-    --gaki-gray: #E8E4EE;
+    --gaki-gray-light: #F8F9FC;
+    --gaki-gray: #E5E9F0;
     --gaki-gray-dark: #6B7280;
-    --gaki-accent: #F59E0B;
+    --gaki-accent: #E85D6A;          /* Rouge clair / accent */
+    --gaki-gold: #C12735;
+    --gaki-gold-light: #E85D6A;
+    --gaki-night: #2D1B50;
     --gaki-success: #10B981;
     --navbar-height: 76px;
     --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     --radius-card: 28px;
-    --shadow-card: 0 4px 24px rgba(88, 51, 127, 0.10);
-    --shadow-card-hover: 0 24px 56px rgba(88, 51, 127, 0.20);
+    --shadow-card: 0 4px 24px rgba(74, 44, 127, 0.10);
+    --shadow-card-hover: 0 24px 56px rgba(74, 44, 127, 0.20);
 }
 
 /* ================================
@@ -37,7 +40,7 @@ html { scroll-behavior: smooth; }
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', 'Arial', sans-serif;
+    font-family: 'Inter', 'Arial', sans-serif;
     font-weight: 400;
     line-height: 1.75;
     color: #1a1a1a;
@@ -61,8 +64,8 @@ h1, h2 {
 }
 
 h3, h4 {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
     letter-spacing: 0.01em;
 }
 
@@ -312,7 +315,7 @@ h2 {
     position: relative;
     overflow: hidden;
     background:
-        linear-gradient(135deg, rgba(61, 34, 89, 0.93) 0%, rgba(193, 39, 53, 0.82) 50%, rgba(61, 34, 89, 0.93) 100%),
+        linear-gradient(135deg, rgba(25, 8, 48, 0.97) 0%, rgba(45, 27, 80, 0.93) 50%, rgba(74, 44, 127, 0.88) 100%),
         url("images/Violet.jpg") center / cover no-repeat;
     background-size: 200% 200%, cover;
     animation: heroGradientShift 12s ease infinite;
@@ -363,9 +366,8 @@ h2 {
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
-    padding: 2rem 1.5rem;
-    padding-top: calc(var(--navbar-height) + 2rem);
+    max-width: 760px;
+    padding: calc(var(--navbar-height) + 4rem) 1.5rem 4rem;
 }
 
 .hero-logo {
@@ -407,15 +409,30 @@ h2 {
 }
 
 .hero-bg h1 {
-    font-size: clamp(3rem, 8vw, 6rem);
+    font-size: clamp(2.4rem, 6vw, 5rem);
     color: #fff;
-    margin: 0 0 1rem;
+    margin: 0 0 1.75rem;
     text-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    line-height: 1;
-    background: linear-gradient(135deg, #fff 40%, #ffd700 100%);
+    line-height: 1.1;
+    background: linear-gradient(135deg, #fff 50%, #E85D6A 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+.hero-bg h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gaki-red), rgba(255,255,255,0.5));
+    border-radius: 2px;
+    animation: taglineUnderline 3s ease-in-out infinite;
 }
 
 .hero-bg h2 {
@@ -764,20 +781,22 @@ h2 {
 }
 
 /* Color variants – header */
-.fc-connect    .filiale-card-header { background: linear-gradient(135deg, #58337F, #7B55A0); }
-.fc-services   .filiale-card-header { background: linear-gradient(135deg, #C1272D, #E85D6A); }
-.fc-industries .filiale-card-header { background: linear-gradient(135deg, #2D6A4F, #52B788); }
-.fc-logistics  .filiale-card-header { background: linear-gradient(135deg, #C45E0A, #F4A261); }
-.fc-digital    .filiale-card-header { background: linear-gradient(135deg, #1A56DB, #4F8EF7); }
-.fc-consulting .filiale-card-header { background: linear-gradient(135deg, #58337F, #C1272D); }
+.fc-connect    .filiale-card-header { background: linear-gradient(135deg, #2D1B50, #4A2C7F); }
+.fc-capital    .filiale-card-header { background: linear-gradient(135deg, #7A5510, #C8922A); }
+.fc-water      .filiale-card-header { background: linear-gradient(135deg, #0A3D5C, #1A7FA0); }
+.fc-solidarite .filiale-card-header { background: linear-gradient(135deg, #1A4A25, #2E7D32); }
+.fc-sani       .filiale-card-header { background: linear-gradient(135deg, #8D3900, #D45E0A); }
+.fc-immo       .filiale-card-header { background: linear-gradient(135deg, #6B2222, #A83232); }
+.fc-academy    .filiale-card-header { background: linear-gradient(135deg, #1B3A6B, #2E5FA3); }
 
 /* Hover border accent */
-.fc-connect:hover    { border-left-color: #58337F; }
-.fc-services:hover   { border-left-color: #C1272D; }
-.fc-industries:hover { border-left-color: #2D6A4F; }
-.fc-logistics:hover  { border-left-color: #C45E0A; }
-.fc-digital:hover    { border-left-color: #1A56DB; }
-.fc-consulting:hover { border-left-color: #58337F; }
+.fc-connect:hover    { border-left-color: #4A2C7F; }
+.fc-capital:hover    { border-left-color: #C8922A; }
+.fc-water:hover      { border-left-color: #1A7FA0; }
+.fc-solidarite:hover { border-left-color: #2E7D32; }
+.fc-sani:hover       { border-left-color: #D45E0A; }
+.fc-immo:hover       { border-left-color: #A83232; }
+.fc-academy:hover    { border-left-color: #2E5FA3; }
 
 /* Card body */
 .filiale-card-body {
@@ -801,14 +820,15 @@ h2 {
     align-self: flex-start;
 }
 
-.fc-services   .filiale-sector-tag { color: var(--gaki-red);  background: rgba(193,39,45,0.08); }
-.fc-industries .filiale-sector-tag { color: #2D6A4F;          background: rgba(45,106,79,0.08); }
-.fc-logistics  .filiale-sector-tag { color: #C45E0A;          background: rgba(196,94,10,0.08); }
-.fc-digital    .filiale-sector-tag { color: #1A56DB;          background: rgba(26,86,219,0.08); }
-.fc-consulting .filiale-sector-tag { color: var(--gaki-purple); background: rgba(88,51,127,0.08); }
+.fc-capital    .filiale-sector-tag { color: #C8922A; background: rgba(200,146,42,0.10); }
+.fc-water      .filiale-sector-tag { color: #1A7FA0; background: rgba(26,127,160,0.10); }
+.fc-solidarite .filiale-sector-tag { color: #2E7D32; background: rgba(46,125,50,0.10); }
+.fc-sani       .filiale-sector-tag { color: #D45E0A; background: rgba(212,94,10,0.10); }
+.fc-immo       .filiale-sector-tag { color: #A83232; background: rgba(168,50,50,0.10); }
+.fc-academy    .filiale-sector-tag { color: #2E5FA3; background: rgba(46,95,163,0.10); }
 
 .filiale-card h4 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
     color: #1a1a1a;
@@ -835,10 +855,12 @@ h2 {
     transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.fc-services   .filiale-card-line { background: linear-gradient(90deg, #C1272D, #E85D6A); }
-.fc-industries .filiale-card-line { background: linear-gradient(90deg, #2D6A4F, #52B788); }
-.fc-logistics  .filiale-card-line { background: linear-gradient(90deg, #C45E0A, #F4A261); }
-.fc-digital    .filiale-card-line { background: linear-gradient(90deg, #1A56DB, #4F8EF7); }
+.fc-capital    .filiale-card-line { background: linear-gradient(90deg, #C8922A, #E4AE45); }
+.fc-water      .filiale-card-line { background: linear-gradient(90deg, #0A3D5C, #1A7FA0); }
+.fc-solidarite .filiale-card-line { background: linear-gradient(90deg, #1A4A25, #2E7D32); }
+.fc-sani       .filiale-card-line { background: linear-gradient(90deg, #8D3900, #D45E0A); }
+.fc-immo       .filiale-card-line { background: linear-gradient(90deg, #6B2222, #A83232); }
+.fc-academy    .filiale-card-line { background: linear-gradient(90deg, #1B3A6B, #2E5FA3); }
 
 .filiale-card:hover .filiale-card-line { width: 100%; }
 
@@ -923,7 +945,7 @@ h2 {
 }
 
 .domaine-content h3 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.15rem;
     font-weight: 600;
     color: #1a1a1a;
@@ -1135,7 +1157,7 @@ h2 {
 }
 
 .team-member-card h3 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     font-weight: 600;
     color: #1a1a1a;
@@ -1165,7 +1187,7 @@ h2 {
    STATS SECTION
 ================================ */
 .stats-section {
-    background: linear-gradient(135deg, var(--gaki-purple-dark) 0%, var(--gaki-purple) 50%, var(--gaki-red-dark) 100%);
+    background: linear-gradient(135deg, #190A32 0%, #2D1B50 55%, #3D2468 100%);
     position: relative;
     overflow: hidden;
 }
@@ -1575,7 +1597,14 @@ h2 {
    FOOTER
 ================================ */
 .footer-main {
-    background: linear-gradient(160deg, #0d0418 0%, #1a0a30 50%, #0a0a0a 100%);
+    background: linear-gradient(160deg, #0F0620 0%, #190A32 50%, #1A0A38 100%);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
 }
 
 .footer-title {
@@ -1946,6 +1975,275 @@ h2 {
     .scroll-top-btn { bottom: 5rem; right: 1.25rem; }
 }
 
+/* ================================
+   CONNECT FOCUS SECTION
+================================ */
+.connect-focus-section {
+    background: linear-gradient(135deg, #190A32 0%, #2D1B50 60%, #3D2468 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 8rem 1.5rem;
+}
+
+.connect-focus-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(193,39,53,0.04) 60px, rgba(193,39,53,0.04) 61px),
+        repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(193,39,53,0.04) 60px, rgba(193,39,53,0.04) 61px);
+    pointer-events: none;
+}
+
+.connect-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.connect-pillar {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(193,39,53,0.20);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.connect-pillar::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #C12735, transparent);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.connect-pillar:hover::before { opacity: 1; }
+
+.connect-pillar:hover {
+    background: rgba(193,39,53,0.06);
+    border-color: rgba(193,39,53,0.40);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.connect-pillar-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #C12735, #E85D6A);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    color: #fff;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 8px 24px rgba(193,39,53,0.35);
+}
+
+.connect-pillar h3 {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.85rem;
+    letter-spacing: 0.02em;
+    border: none;
+    padding: 0;
+}
+
+.connect-pillar p {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.87rem;
+    line-height: 1.75;
+    margin: 0;
+}
+
+.connect-cta-wrap {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-connect-cta {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, #C12735, #E85D6A);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    transition: var(--transition);
+    box-shadow: 0 6px 20px rgba(193,39,53,0.4);
+    text-decoration: none;
+}
+
+.btn-connect-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(193,39,53,0.55);
+    color: #fff;
+}
+
+/* ================================
+   FONDATION GAKI SECTION
+================================ */
+.fondation-section {
+    background: linear-gradient(135deg, #190A32 0%, #2D1B50 55%, #1A0A38 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 8rem 1.5rem;
+}
+
+.fondation-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("images/Modern.jpg") center / cover no-repeat;
+    opacity: 0.03;
+    pointer-events: none;
+}
+
+.fondation-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.fondation-pillar {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 24px;
+    transition: var(--transition);
+}
+
+.fondation-pillar:hover {
+    background: rgba(255,255,255,0.05);
+    transform: translateY(-8px);
+    border-color: rgba(193,39,53,0.28);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.fondation-pillar-center {
+    background: rgba(193,39,53,0.06);
+    border-color: rgba(193,39,53,0.30);
+    transform: scale(1.03);
+}
+
+.fondation-pillar-center:hover {
+    transform: scale(1.03) translateY(-8px);
+}
+
+.fondation-pillar-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    border: 2px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: rgba(255,255,255,0.8);
+    margin: 0 auto 1.5rem;
+    transition: var(--transition);
+}
+
+.fondation-icon-gold {
+    background: linear-gradient(135deg, #C12735, #E85D6A);
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(193,39,53,0.4);
+}
+
+.fondation-pillar h3 {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.85rem;
+    border: none;
+    padding: 0;
+}
+
+.fondation-pillar p {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.875rem;
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* ================================
+   UTILITY ADDITIONS
+================================ */
+.section-badge-dark {
+    background: rgba(193,39,53,0.18) !important;
+    color: #E85D6A !important;
+    border: 1px solid rgba(193,39,53,0.35);
+    backdrop-filter: blur(4px);
+}
+
+.section-badge-light {
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.28);
+}
+
+.divider-gold {
+    background: linear-gradient(90deg, #C12735, #E85D6A) !important;
+}
+
+.filiale-flag {
+    font-size: 0.72em;
+    margin-left: 0.25em;
+    font-weight: 700;
+}
+
+.filiale-link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 0.75rem;
+    color: var(--gaki-purple);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.filiale-link:hover {
+    color: var(--gaki-gold);
+    transform: translateX(4px);
+}
+
+.nav-link-highlight {
+    color: #E85D6A !important;
+    font-weight: 700 !important;
+}
+
+.navbar.scrolled .nav-link-highlight {
+    color: var(--gaki-red) !important;
+}
+
+/* ================================
+   HERO WAVE FILL UPDATE
+================================ */
+.connect-focus-section + .page-section { }
+
 /* ---- Mobile (≤ 480px) ---- */
 @media (max-width: 480px) {
     .page-section     { padding: 3.5rem 1rem; }
@@ -1999,4 +2297,102 @@ h2 {
 
     /* Footer */
     .footer-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ================================
+   RESPONSIVE – NOUVELLES SECTIONS
+================================ */
+@media (max-width: 768px) {
+    .connect-pillars { grid-template-columns: 1fr; gap: 1rem; }
+    .fondation-pillars { grid-template-columns: 1fr; gap: 1rem; }
+    .fondation-pillar-center { transform: scale(1); }
+    .fondation-pillar-center:hover { transform: translateY(-8px); }
+    .connect-focus-section { padding: 5rem 1.25rem; }
+    .fondation-section { padding: 5rem 1.25rem; }
+}
+
+@media (max-width: 480px) {
+    .connect-pillars { gap: 0.75rem; }
+    .connect-pillar { padding: 2rem 1.25rem; }
+    .connect-pillar-icon { width: 56px; height: 56px; font-size: 1.3rem; }
+    .fondation-pillar { padding: 2rem 1.25rem; }
+    .fondation-pillar-icon { width: 64px; height: 64px; font-size: 1.5rem; }
+}
+
+/* ================================
+   SECTION LE GROUPE
+================================ */
+.groupe-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.groupe-text p {
+    color: #555;
+    line-height: 1.85;
+    font-size: 0.95rem;
+}
+
+.groupe-diff-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.1rem;
+}
+
+.groupe-diff-card {
+    background: #F8F9FC;
+    border-radius: 16px;
+    padding: 1.5rem 1.25rem;
+    border: 1px solid rgba(74, 44, 127, 0.07);
+    transition: var(--transition);
+}
+
+.groupe-diff-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+    border-color: rgba(74, 44, 127, 0.15);
+}
+
+.groupe-diff-card i {
+    font-size: 1.3rem;
+    margin-bottom: 0.65rem;
+    display: block;
+}
+
+.groupe-diff-card h4 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.35rem;
+}
+
+.groupe-diff-card p {
+    font-size: 0.79rem;
+    color: #6B7280;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Wave de transition filiales → fondation */
+.section-wave-bottom {
+    line-height: 0;
+    overflow: hidden;
+    margin-top: 3rem;
+}
+
+.section-wave-bottom svg {
+    display: block;
+    width: 100%;
+    height: 56px;
+}
+
+@media (max-width: 768px) {
+    .groupe-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .groupe-diff-grid { gap: 0.85rem; }
+}
+
+@media (max-width: 480px) {
+    .groupe-diff-grid { grid-template-columns: 1fr; }
 }

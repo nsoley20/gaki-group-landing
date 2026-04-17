@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add '+' suffix for eligible counters
     document.querySelectorAll('.counter').forEach(el => {
         const target = parseInt(el.getAttribute('data-target'), 10);
-        if ([15, 100].includes(target)) {
+        if ([15, 100, 500].includes(target)) {
             el.setAttribute('data-suffix', '+');
         }
     });
@@ -184,19 +184,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ==============================
-       FORM SUBMIT FEEDBACK
+       FORM SUBMIT — Formspree fetch
     ============================== */
     const form = document.querySelector('form');
     if (form) {
         const submitBtn = form.querySelector('button[type="submit"]');
 
         const feedback = document.createElement('div');
-        feedback.className = 'form-feedback';
-        feedback.innerHTML = '<i class="fas fa-check-circle mr-2"></i>Merci ! Votre message a bien été envoyé.';
         feedback.style.cssText = `
             display:none;
-            background: linear-gradient(135deg, #10B981, #059669);
-            color: #fff;
             padding: 1rem 1.5rem;
             border-radius: 12px;
             text-align: center;
@@ -206,17 +202,42 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         form.appendChild(feedback);
 
-        form.addEventListener('submit', (e) => {
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Envoi en cours...';
-
+        function showFeedback(ok) {
+            if (ok) {
+                feedback.style.background = 'linear-gradient(135deg,#10B981,#059669)';
+                feedback.innerHTML = '<i class="fas fa-check-circle" style="margin-right:.5rem"></i>Message envoyé — nous vous répondrons sous 48h.';
+            } else {
+                feedback.style.background = 'linear-gradient(135deg,#C12735,#9B1E2B)';
+                feedback.innerHTML = '<i class="fas fa-exclamation-triangle" style="margin-right:.5rem"></i>Erreur d\'envoi. Écrivez-nous directement à gakigroup@outlook.com';
+            }
+            feedback.style.color = '#fff';
             feedback.style.display = 'block';
+        }
 
-            setTimeout(() => {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Envoi en cours…';
+            feedback.style.display = 'none';
+
+            try {
+                const res = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (res.ok) {
+                    showFeedback(true);
+                    form.reset();
+                } else {
+                    showFeedback(false);
+                }
+            } catch {
+                showFeedback(false);
+            } finally {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i>Envoyer le message';
-                feedback.style.display = 'none';
-            }, 5000);
+            }
         });
     }
 
