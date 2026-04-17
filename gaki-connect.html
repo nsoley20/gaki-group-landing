@@ -465,6 +465,48 @@
         line-height: 1.5;
     }
 
+    /* ---- MISSION CALLOUT ---- */
+    .mission-callout {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.75rem;
+        background: linear-gradient(135deg, rgba(10,110,255,0.07), rgba(10,110,255,0.02));
+        border: 1px solid rgba(10,110,255,0.25);
+        border-left: 3px solid var(--cx-blue);
+        border-radius: 16px;
+        padding: 2rem 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+    .mission-callout-icon {
+        width: 54px; height: 54px; border-radius: 14px;
+        background: linear-gradient(135deg, var(--cx-blue), var(--cx-blue-dim));
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.3rem; color: #fff; flex-shrink: 0;
+        box-shadow: 0 6px 22px var(--cx-blue-glow);
+    }
+    .mission-callout h3 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.05rem; font-weight: 700; color: #fff;
+        margin-bottom: 0.5rem; border: none; padding: 0;
+    }
+    .mission-callout p {
+        color: var(--cx-muted); font-size: 0.97rem;
+        line-height: 1.85; margin: 0;
+    }
+
+    /* ---- PILLARS ROW ---- */
+    .vision-points-row {
+        flex-direction: row;
+        gap: 1rem;
+        margin-bottom: 3.5rem;
+    }
+    .vision-points-row .vision-point {
+        flex: 1;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
     /* ---- NEXUS METRICS STRIP ---- */
     .nexus-strip {
         display: grid;
@@ -1530,6 +1572,8 @@
 
     @media (max-width: 900px) {
         .vision-grid, .impact-layout, .institution-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+        .vision-points-row { flex-direction: column; }
+        .mission-callout { flex-direction: column; gap: 1rem; padding: 1.5rem; }
         .souv-grid { grid-template-columns: 1fr 1fr; }
         .nexus-layout { grid-template-columns: repeat(2, 1fr); }
         .nexus-strip { grid-template-columns: repeat(2, 1fr); }
@@ -1682,68 +1726,65 @@
         <span class="cx-section-badge"><i class="fas fa-bullseye"></i> Vision &amp; Mission</span>
         <h2>L'Excellence Technologique au Service de la <span>Souveraineté</span></h2>
         <div class="cx-divider"></div>
-        <p class="cx-section-intro">
-            La mission de Gaki Connect est de concevoir et d'opérer les infrastructures de connectivité les plus résilientes d'Afrique de l'Ouest. Nous ne nous contentons pas de fournir un accès ; nous bâtissons les fondations numériques nécessaires à l'autonomie stratégique des États et à la performance des industries critiques.
-        </p>
 
-        <div class="vision-grid">
-            <div class="vision-text">
+        <!-- Bloc Mission -->
+        <div class="mission-callout">
+            <div class="mission-callout-icon"><i class="fas fa-satellite-dish"></i></div>
+            <div>
                 <h3>Notre Mission</h3>
-                <p>
-                    Garantir que <strong>chaque bit de donnée, chaque transaction et chaque échange</strong> reste sous contrôle national et régalien. Nous transformons chaque zone blanche en un hub d'opportunités stratégiques grâce à une ingénierie de pointe.
-                </p>
-                <p style="margin-top:1.25rem; font-family:'Montserrat',sans-serif; font-size:0.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--cx-blue); opacity:.85;">
-                    <i class="fas fa-layer-group" style="margin-right:.4rem"></i>Nos trois piliers d'intervention
-                </p>
+                <p>Concevoir, déployer et opérer les infrastructures de connectivité les plus résilientes d'Afrique de l'Ouest — au service de l'autonomie stratégique des États, de la performance des industries critiques, et de l'inclusion numérique de chaque citoyen sénégalais.</p>
             </div>
-            <ul class="vision-points">
-                <li class="vision-point">
-                    <div class="vision-point-icon"><i class="fas fa-shield-halved"></i></div>
-                    <div class="vision-point-text">
-                        <strong>Garantir la Continuité Critique</strong>
-                        <span>Disponibilité de service de 99,99% pour les infrastructures maritimes, terrestres et institutionnelles, même dans les conditions les plus extrêmes.</span>
-                    </div>
-                </li>
-                <li class="vision-point">
-                    <div class="vision-point-icon"><i class="fas fa-lock"></i></div>
-                    <div class="vision-point-text">
-                        <strong>Verrouiller la Souveraineté Numérique</strong>
-                        <span>Imposer le standard du « Landing Local » pour que chaque flux de données reste sous contrôle national et régalien.</span>
-                    </div>
-                </li>
-                <li class="vision-point">
-                    <div class="vision-point-icon"><i class="fas fa-satellite"></i></div>
-                    <div class="vision-point-text">
-                        <strong>Désenclaver par l'Innovation</strong>
-                        <span>Transformer les zones blanches en hubs d'opportunités économiques grâce à l'hybridation satellite de nouvelle génération (GEO/LEO/L-Band).</span>
-                    </div>
-                </li>
-            </ul>
         </div>
 
-        <!-- POURQUOI CHOISIR GAKI CONNECT ? -->
+        <!-- 3 Piliers -->
+        <p class="steps-label" style="margin-bottom:1.5rem"><i class="fas fa-layer-group" style="margin-right:.4rem"></i>NOS TROIS PILIERS D'INTERVENTION</p>
+        <ul class="vision-points vision-points-row">
+            <li class="vision-point">
+                <div class="vision-point-icon"><i class="fas fa-shield-halved"></i></div>
+                <div class="vision-point-text">
+                    <strong>Garantir la Continuité Critique</strong>
+                    <span>Disponibilité de 99,99% pour les infrastructures maritimes, terrestres et institutionnelles — même dans les conditions les plus extrêmes.</span>
+                </div>
+            </li>
+            <li class="vision-point">
+                <div class="vision-point-icon"><i class="fas fa-lock"></i></div>
+                <div class="vision-point-text">
+                    <strong>Verrouiller la Souveraineté Numérique</strong>
+                    <span>Imposer le standard du « Landing Local » — chaque flux de données sensible reste 100% sur le territoire national, sous contrôle régalien.</span>
+                </div>
+            </li>
+            <li class="vision-point">
+                <div class="vision-point-icon"><i class="fas fa-satellite"></i></div>
+                <div class="vision-point-text">
+                    <strong>Désenclaver par l'Innovation</strong>
+                    <span>Transformer chaque zone blanche en hub d'opportunités grâce à l'hybridation satellite multi-orbite de nouvelle génération.</span>
+                </div>
+            </li>
+        </ul>
+
+        <!-- Ce qui nous distingue -->
         <div class="steps-wrap animate-on-scroll">
-            <p class="steps-label"><i class="fas fa-circle-nodes" style="margin-right:.4rem"></i>POURQUOI CHOISIR GAKI CONNECT ?</p>
+            <p class="steps-label"><i class="fas fa-trophy" style="margin-right:.4rem"></i>CE QUI NOUS DISTINGUE</p>
             <div class="steps-grid">
                 <div class="step-card">
-                    <div class="step-num">1</div>
-                    <h4>Une Expertise de Pointe et Certifiée</h4>
-                    <p>Gaki Connect s'appuie sur des partenariats technologiques mondiaux et une ingénierie locale de haut niveau. Nos solutions de connectivité hybride sont conçues pour répondre aux standards de sécurité les plus rigoureux des télécommunications.</p>
+                    <div class="step-num"><i class="fas fa-certificate" style="font-size:1.1rem"></i></div>
+                    <h4>Le Seul FAI Souverain du Sénégal</h4>
+                    <p>Seul opérateur à nativement intégrer le « Landing Local ». Zéro transit étranger — vos données ne quittent jamais le sol national.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-num">2</div>
-                    <h4>Disponibilité et Résilience Absolue</h4>
-                    <p>Grâce à l'hybridation multi-orbite (GEO/LEO/L-Band), nous garantissons une continuité de service de 99,99%. Nos infrastructures restent opérationnelles là où les réseaux traditionnels atteignent leurs limites.</p>
+                    <div class="step-num"><i class="fas fa-users" style="font-size:1.1rem"></i></div>
+                    <h4>500 Experts Sénégalais</h4>
+                    <p>100% d'emplois directs locaux dès l'amorçage. Une équipe de haut niveau, formée et certifiée, encadrée par GAKI Academy.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-num">3</div>
-                    <h4>Engagement pour la Souveraineté</h4>
-                    <p>Nous sommes le seul opérateur à intégrer nativement le protocole de « Landing Local ». En choisissant Gaki Connect, vous garantissez que vos flux de données restent sous contrôle régalien, hébergés sur le territoire national.</p>
+                    <div class="step-num"><i class="fas fa-server" style="font-size:1.1rem"></i></div>
+                    <h4>Data Center Souverain à Dakar</h4>
+                    <p>Un ancrage physique national — gardien des flux stratégiques de l'État, des opérateurs économiques et des citoyens sénégalais.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-num">4</div>
-                    <h4>Agilité et Accompagnement Stratégique</h4>
-                    <p>Au-delà de la fourniture d'accès, nous agissons comme partenaire conseil. Notre structure agile déploie des solutions sur mesure en un temps record, que ce soit pour des flottes maritimes, des sites industriels ou des institutions publiques.</p>
+                    <div class="step-num"><i class="fas fa-bolt" style="font-size:1.1rem"></i></div>
+                    <h4>Déploiement Rapide &amp; Sur Mesure</h4>
+                    <p>Une structure agile qui conçoit et livre des solutions personnalisées en temps record — flottes maritimes, sites industriels, institutions publiques.</p>
                 </div>
             </div>
         </div>
@@ -1757,10 +1798,10 @@
 <section id="nexuswave" class="cx-section cx-section-alt">
     <div class="cx-container animate-on-scroll">
         <span class="cx-section-badge"><i class="fas fa-layer-group"></i> Nos Solutions</span>
-        <h2>Une Architecture <span>Sur Mesure</span> pour Chaque Défi</h2>
+        <h2>Un Portefeuille Technologique <span>Taillé pour l'Excellence</span></h2>
         <div class="cx-divider"></div>
         <p class="cx-section-intro">
-            Chez Gaki Connect, nous ne croyons pas aux solutions génériques. Grâce à notre partenariat stratégique avec les leaders mondiaux des télécommunications satellitaires, nous disposons d'un portefeuille technologique étendu pour répondre avec précision à chaque exigence opérationnelle.
+            Chaque client, chaque environnement, chaque défi est unique. C'est pourquoi Gaki Connect a constitué un portefeuille de solutions complémentaires — conçu avec les leaders mondiaux du satellite — pour répondre avec une précision chirurgicale à chaque exigence opérationnelle.
         </p>
 
         <!-- Métriques clés -->
@@ -1835,7 +1876,7 @@
         <h2>L'Infrastructure de <span class="gold">Souveraineté Numérique</span></h2>
         <div class="cx-divider gold"></div>
         <p class="cx-section-intro">
-            « Garantir l'intégrité des données nationales pour assurer l'autonomie stratégique de demain. »
+            « Dans un monde interconnecté, la souveraineté numérique n'est pas une option — c'est le fondement de toute indépendance stratégique. »
         </p>
 
         <!-- Indicateurs régaliens -->
