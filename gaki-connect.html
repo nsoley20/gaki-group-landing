@@ -1685,6 +1685,11 @@
         color: var(--cx-blue); background: rgba(10,110,255,0.15);
         padding: 0.18rem 0.55rem; border-radius: 50px;
     }
+    .uemoa-map-img {
+        width: 100%; height: auto; display: block;
+        border-radius: 16px; margin-bottom: 1.25rem;
+        box-shadow: 0 0 40px rgba(10,110,255,0.15), 0 16px 40px rgba(0,0,0,0.4);
+    }
     .uemoa-coverage-footer {
         text-align: center; font-size: 0.72rem; color: var(--cx-muted);
         font-family: 'Montserrat', sans-serif; letter-spacing: 0.07em;
@@ -2242,20 +2247,12 @@
         <!-- Logos partenaires -->
         <div class="partner-logos-grid">
             <div class="partner-logo-card">
-                <div class="partner-brands">
-                    <span class="brand-pill brand-viasat">Viasat</span>
-                    <span class="brand-sep">+</span>
-                    <span class="brand-pill brand-inmarsat">Inmarsat</span>
-                </div>
-                <i class="fas fa-satellite partner-card-icon"></i>
-                <span>Partenaires Satellitaires Mondiaux</span>
+                <img src="images/partner-viasat-inmarsat.jpg" alt="Viasat — Partenaire Satellite Mondial">
+                <span>Partenaire Satellitaire Mondial</span>
                 <p class="partner-card-desc">Accès prioritaire aux constellations GEO &amp; LEO — couverture Ka/L-Band mondiale</p>
             </div>
             <div class="partner-logo-card">
-                <div class="partner-brands">
-                    <span class="brand-pill brand-cosama">COSAMA SA</span>
-                </div>
-                <i class="fas fa-ship partner-card-icon"></i>
+                <img src="images/partner-cosama.jpg" alt="COSAMA SA — Consortium Sénégalais d'Activités Maritimes">
                 <span>Partenaire Maritime National</span>
                 <p class="partner-card-desc">Consortium Sénégalais d'Activités Maritimes — flotte nationale connectée en haute mer</p>
             </div>
@@ -2343,50 +2340,11 @@
             Du Sénégal au Niger, de la Côte d'Ivoire au Bénin — Gaki Connect déploie une infrastructure de souveraineté numérique à l'échelle de toute la zone UEMOA, faisant de la connectivité un droit fondamental pour 8 États membres.
         </p>
 
-        <!-- Visualisation UEMOA -->
+        <!-- Carte UEMOA -->
         <div class="uemoa-coverage-visual">
-            <div class="uemoa-visual-header">
-                <div class="uemoa-sat-icon"><i class="fas fa-satellite-dish"></i></div>
-                <div class="uemoa-visual-header-text">
-                    <strong>Zone de Couverture Souveraine</strong>
-                    <span><i class="fas fa-signal"></i> UEMOA · Infrastructure Active · Satellite GEO/LEO/L-Band</span>
-                </div>
-            </div>
-            <div class="uemoa-countries-grid">
-                <div class="uemoa-country-card country-hub">
-                    <span class="country-flag">🇸🇳</span>
-                    <span class="country-name">Sénégal</span>
-                    <span class="country-badge">Hub Principal</span>
-                </div>
-                <div class="uemoa-country-card">
-                    <span class="country-flag">🇨🇮</span>
-                    <span class="country-name">Côte d'Ivoire</span>
-                </div>
-                <div class="uemoa-country-card">
-                    <span class="country-flag">🇲🇱</span>
-                    <span class="country-name">Mali</span>
-                </div>
-                <div class="uemoa-country-card">
-                    <span class="country-flag">🇧🇫</span>
-                    <span class="country-name">Burkina Faso</span>
-                </div>
-                <div class="uemoa-country-card">
-                    <span class="country-flag">🇳🇪</span>
-                    <span class="country-name">Niger</span>
-                </div>
-                <div class="uemoa-country-card">
-                    <span class="country-flag">🇹🇬</span>
-                    <span class="country-name">Togo</span>
-                </div>
-                <div class="uemoa-country-card">
-                    <span class="country-flag">🇧🇯</span>
-                    <span class="country-name">Bénin</span>
-                </div>
-                <div class="uemoa-country-card">
-                    <span class="country-flag">🇬🇼</span>
-                    <span class="country-name">Guinée-Bissau</span>
-                </div>
-            </div>
+            <img src="images/carte-uemoa.png"
+                 alt="Carte de couverture GAKI Connect – Zone UEMOA"
+                 class="uemoa-map-img" />
             <div class="uemoa-coverage-footer">
                 <i class="fas fa-check-circle"></i>8 États Membres · 3 200 000 km² · Couverture Satellite Permanente · Data Souverain
             </div>
