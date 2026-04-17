@@ -1549,10 +1549,204 @@
     .map-active .map-connection { opacity: 1; }
     .map-connection { opacity: 0; transition: opacity 0.5s ease; }
 
+    /* ---- ECOSYSTEM / PARTENAIRES ---- */
+    .partner-logos-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+    .partner-logo-card {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 16px;
+        padding: 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        transition: all 0.3s ease;
+        min-height: 160px;
+    }
+    .partner-logo-card:hover {
+        background: rgba(255,255,255,0.07);
+        border-color: rgba(10,110,255,0.3);
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .partner-logo-card img {
+        max-height: 70px;
+        max-width: 100%;
+        object-fit: contain;
+        border-radius: 8px;
+    }
+    .partner-logo-card span {
+        font-size: 0.72rem;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+        color: var(--cx-muted);
+        text-align: center;
+    }
+    .coverage-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+    .coverage-card {
+        background: var(--cx-card-bg);
+        border: 1px solid var(--cx-border);
+        border-radius: 16px;
+        padding: 2rem;
+    }
+    .coverage-card-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+    }
+    .coverage-card-icon {
+        width: 46px; height: 46px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--cx-blue), var(--cx-blue-dim));
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.1rem; color: #fff; flex-shrink: 0;
+        box-shadow: 0 4px 14px var(--cx-blue-glow);
+    }
+    .coverage-card h4 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1rem; font-weight: 700; color: #fff;
+        border: none; padding: 0; margin: 0;
+    }
+    .coverage-card ul {
+        list-style: none; padding: 0; margin: 0;
+        display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .coverage-card li {
+        display: flex; align-items: center; gap: 0.6rem;
+        font-size: 0.85rem; color: var(--cx-muted);
+    }
+    .coverage-card li i { color: var(--cx-blue); font-size: 0.5rem; }
+    .accred-strip {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .accred-item {
+        display: flex; align-items: center; gap: 0.75rem;
+        background: rgba(193,39,53,0.08);
+        border: 1px solid rgba(193,39,53,0.25);
+        border-radius: 12px;
+        padding: 0.9rem 1.5rem;
+    }
+    .accred-item i { color: var(--cx-gold); font-size: 1.1rem; }
+    .accred-item div strong {
+        display: block; color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.82rem; font-weight: 700;
+    }
+    .accred-item div span {
+        font-size: 0.75rem; color: var(--cx-muted);
+    }
+
+    /* ---- POLES D'INTERVENTION ---- */
+    .poles-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+        margin-top: 2.5rem;
+    }
+    .pole-card {
+        background: var(--cx-card-bg);
+        border: 1px solid var(--cx-border);
+        border-radius: 16px;
+        padding: 1.75rem;
+        transition: all 0.3s ease;
+    }
+    .pole-card:hover {
+        background: rgba(10,110,255,0.07);
+        border-color: rgba(10,110,255,0.35);
+        transform: translateY(-4px);
+    }
+    .pole-card-icon {
+        width: 46px; height: 46px; border-radius: 12px;
+        background: linear-gradient(135deg, var(--cx-blue), var(--cx-blue-dim));
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.1rem; color: #fff; margin-bottom: 1.1rem;
+        box-shadow: 0 4px 14px var(--cx-blue-glow);
+    }
+    .pole-card h4 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.92rem; font-weight: 700; color: #fff;
+        margin-bottom: 0.6rem; border: none; padding: 0;
+    }
+    .pole-card p {
+        font-size: 0.82rem; color: var(--cx-muted); line-height: 1.65; margin: 0;
+    }
+    .btn-cx-strategic {
+        display: inline-flex; align-items: center; gap: 0.6rem;
+        background: linear-gradient(135deg, var(--cx-gold), var(--cx-gold-lt));
+        color: #fff; font-family: 'Montserrat', sans-serif;
+        font-size: 0.82rem; font-weight: 700; letter-spacing: .06em;
+        text-transform: uppercase; padding: 0.9rem 2rem;
+        border-radius: 50px; text-decoration: none;
+        margin-top: 2.5rem;
+        box-shadow: 0 6px 24px rgba(193,39,53,0.35);
+        transition: all 0.3s ease;
+    }
+    .btn-cx-strategic:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(193,39,53,0.5); }
+
+    /* ---- COMPARE ROWS (new) ---- */
+    .compare-rows { display: flex; flex-direction: column; gap: 0; margin-top: 0; }
+    .compare-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0;
+        border-bottom: 1px solid var(--cx-border);
+    }
+    .compare-row:first-child { border-top: 1px solid var(--cx-border); }
+    .compare-row.compare-header { background: rgba(10,110,255,0.06); }
+    .compare-cell {
+        padding: 1.1rem 1.5rem;
+        font-size: 0.85rem;
+        color: var(--cx-muted);
+        line-height: 1.55;
+        border-right: 1px solid var(--cx-border);
+        display: flex; align-items: center; gap: 0.5rem;
+    }
+    .compare-cell:last-child { border-right: none; }
+    .compare-cell.cell-label {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700; font-size: 0.8rem;
+        color: rgba(255,255,255,0.75); text-transform: uppercase;
+        letter-spacing: .04em;
+    }
+    .compare-cell.cell-classic { color: rgba(255,255,255,0.4); }
+    .compare-cell.cell-gaki { color: rgba(255,255,255,0.88); }
+    .compare-cell.cell-gaki i.ico-ok { color: var(--cx-blue); margin-right: 0.25rem; }
+    .compare-cell.cell-classic i.ico-no { color: rgba(255,80,80,0.7); margin-right: 0.25rem; }
+    .compare-header .compare-cell {
+        font-family: 'Montserrat', sans-serif; font-weight: 800;
+        font-size: 0.78rem; letter-spacing: .08em; text-transform: uppercase;
+    }
+    .compare-header .compare-cell.cell-gaki { color: var(--cx-blue); }
+    .compare-header .compare-cell.cell-classic { color: rgba(255,255,255,0.4); }
+
     /* ---- RESPONSIVE NEW SECTIONS ---- */
     @media (max-width: 768px) {
         .steps-grid { grid-template-columns: 1fr 1fr; }
         .steps-grid::before { display: none; }
+        .partner-logos-grid { grid-template-columns: 1fr 1fr; }
+        .coverage-grid { grid-template-columns: 1fr; }
+        .poles-grid { grid-template-columns: 1fr; }
+        .compare-row { grid-template-columns: 1fr; }
+        .compare-header { display: none; }
+        .compare-cell { border-right: none; border-bottom: 1px solid var(--cx-border); }
+        .compare-cell.cell-label { background: rgba(10,110,255,0.06); font-size:0.72rem; }
         .roadmap-phase { grid-template-columns: 1fr; gap: 1rem; }
         .roadmap-spine, .rp-center { display: none; }
         .rp-left { text-align: left; padding-right: 0; }
@@ -1708,7 +1902,7 @@
         <a href="#vision"       class="connect-subnav-link" data-section="vision">Vision</a>
         <a href="#nexuswave"    class="connect-subnav-link" data-section="nexuswave">NexusWave</a>
         <a href="#souverainete" class="connect-subnav-link" data-section="souverainete">Souveraineté</a>
-        <a href="#roadmap"      class="connect-subnav-link" data-section="roadmap">Roadmap</a>
+        <a href="#roadmap"      class="connect-subnav-link" data-section="roadmap">Partenaires</a>
         <a href="#impact"       class="connect-subnav-link" data-section="impact">Impact</a>
         <a href="#comparison"   class="connect-subnav-link" data-section="comparison">Comparatif</a>
         <a href="#faq"          class="connect-subnav-link" data-section="faq">FAQ</a>
@@ -1929,78 +2123,90 @@
 </section>
 
 <!-- ================================
-     3b. FEUILLE DE ROUTE
+     3b. ÉCOSYSTÈME DE CONFIANCE
 ================================ -->
 <section id="roadmap" class="cx-section cx-section-alt">
     <div class="cx-container animate-on-scroll">
-        <span class="cx-section-badge"><i class="fas fa-road"></i> Feuille de Route</span>
-        <h2>Le Plan de <span>Déploiement</span></h2>
-        <div class="cx-divider"></div>
-        <p class="cx-section-intro">Trois phases pour connecter la totalité du territoire sénégalais, puis rayonner sur le continent.</p>
+        <span class="cx-section-badge gold-badge"><i class="fas fa-handshake"></i> Partenaires</span>
+        <h2>Un Écosystème de Confiance &amp; <span class="gold">Des Partenaires Mondiaux</span></h2>
+        <div class="cx-divider gold"></div>
+        <p class="cx-section-intro">
+            La crédibilité de Gaki Connect repose sur des alliances stratégiques avec les acteurs les plus reconnus du secteur. Nos partenaires technologiques et institutionnels sont la garantie d'une excellence opérationnelle.
+        </p>
 
-        <div class="roadmap-timeline">
-            <div class="roadmap-spine"></div>
-
-            <!-- Phase 1 -->
-            <div class="roadmap-phase">
-                <div class="rp-left">
-                    <div class="rp-card active">
-                        <span class="rp-tag tag-go">En cours · 2026</span>
-                        <div class="rp-year">Phase 1</div>
-                        <h3>Zones Prioritaires &amp; Maritime</h3>
-                        <ul>
-                            <li><i class="fas fa-circle"></i> Dakar &amp; Grand Dakar</li>
-                            <li><i class="fas fa-circle"></i> Thiès &amp; Mbour</li>
-                            <li><i class="fas fa-circle"></i> Saint-Louis &amp; Louga</li>
-                            <li><i class="fas fa-circle"></i> Flotte maritime nationale (COSAMA)</li>
-                            <li><i class="fas fa-circle"></i> Dépôt dossier FAI — ARTP</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="rp-center"><div class="rp-dot active">P1</div></div>
-                <div class="rp-right"></div>
+        <!-- Logos partenaires -->
+        <div class="partner-logos-grid">
+            <div class="partner-logo-card">
+                <img src="images/partner-viasat-inmarsat.jpg" alt="Viasat & Inmarsat — Partenaires Technologiques">
+                <span>Partenaires Satellitaires Mondiaux</span>
             </div>
-
-            <!-- Phase 2 -->
-            <div class="roadmap-phase">
-                <div class="rp-left"></div>
-                <div class="rp-center"><div class="rp-dot">P2</div></div>
-                <div class="rp-right">
-                    <div class="rp-card">
-                        <span class="rp-tag tag-next">2027</span>
-                        <div class="rp-year" style="color:rgba(10,110,255,0.6)">Phase 2</div>
-                        <h3>Désenclavement National</h3>
-                        <ul>
-                            <li><i class="fas fa-circle"></i> Matam &amp; Kaffrine</li>
-                            <li><i class="fas fa-circle"></i> Tambacounda &amp; Kolda</li>
-                            <li><i class="fas fa-circle"></i> Ziguinchor — Casamance</li>
-                            <li><i class="fas fa-circle"></i> Kédougou &amp; zones rurales</li>
-                            <li><i class="fas fa-circle"></i> Déploiement GAKI Academy (500 experts)</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="partner-logo-card">
+                <img src="images/partner-cosama.png" alt="COSAMA SA — Consortium Sénégalais d'Activités Maritimes">
+                <span>Partenaire Maritime National</span>
             </div>
-
-            <!-- Phase 3 -->
-            <div class="roadmap-phase">
-                <div class="rp-left">
-                    <div class="rp-card">
-                        <span class="rp-tag tag-future">2028 – 2030</span>
-                        <div class="rp-year" style="color:rgba(255,255,255,0.25)">Phase 3</div>
-                        <h3>Vision Continentale</h3>
-                        <ul>
-                            <li><i class="fas fa-circle"></i> Extension Afrique de l'Ouest</li>
-                            <li><i class="fas fa-circle"></i> Services gouvernementaux premium</li>
-                            <li><i class="fas fa-circle"></i> Interconnexion défense nationale</li>
-                            <li><i class="fas fa-circle"></i> Partenariats inter-États GEO/LEO</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="rp-center"><div class="rp-dot">P3</div></div>
-                <div class="rp-right"></div>
+            <div class="partner-logo-card">
+                <img src="images/partner-gaki-uemoa.jpg" alt="GAKI Connect — Souveraineté Régionale UEMOA">
+                <span>Couverture Régionale UEMOA</span>
             </div>
-
         </div>
+
+        <!-- Zones de couverture -->
+        <p class="steps-label" style="margin-bottom:1.5rem"><i class="fas fa-globe-africa" style="margin-right:.4rem"></i>ZONES DE COUVERTURE GARANTIES</p>
+        <div class="coverage-grid">
+            <div class="coverage-card">
+                <div class="coverage-card-header">
+                    <div class="coverage-card-icon"><i class="fas fa-landmark"></i></div>
+                    <h4>Couverture Fixe — Territoire National</h4>
+                </div>
+                <ul>
+                    <li><i class="fas fa-circle"></i> 14 régions du Sénégal — couverture 100%</li>
+                    <li><i class="fas fa-circle"></i> Zones urbaines, périurbaines et rurales isolées</li>
+                    <li><i class="fas fa-circle"></i> Zones blanches transformées en hubs connectés</li>
+                    <li><i class="fas fa-circle"></i> Installations gouvernementales et institutionnelles</li>
+                    <li><i class="fas fa-circle"></i> Data Center souverain à Dakar-Plateau</li>
+                </ul>
+            </div>
+            <div class="coverage-card">
+                <div class="coverage-card-header">
+                    <div class="coverage-card-icon"><i class="fas fa-ship"></i></div>
+                    <h4>Couverture Mobile — Eaux Territoriales &amp; Haute Mer</h4>
+                </div>
+                <ul>
+                    <li><i class="fas fa-circle"></i> Flotte nationale COSAMA — connectivité permanente</li>
+                    <li><i class="fas fa-circle"></i> Eaux territoriales et zone économique exclusive</li>
+                    <li><i class="fas fa-circle"></i> Axes maritimes stratégiques Atlantique Ouest</li>
+                    <li><i class="fas fa-circle"></i> Flotte de pêche industrielle et artisanale</li>
+                    <li><i class="fas fa-circle"></i> Coordination SAR (Search &amp; Rescue) en temps réel</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Accréditations -->
+        <p class="steps-label" style="margin-bottom:1.5rem"><i class="fas fa-certificate" style="margin-right:.4rem"></i>CONFORMITÉ &amp; ACCRÉDITATIONS</p>
+        <div class="accred-strip">
+            <div class="accred-item">
+                <i class="fas fa-shield-halved"></i>
+                <div>
+                    <strong>Opérateur agréé par l'ARTP</strong>
+                    <span>Conformité Loi n°2022-21 du 19 juin 2022</span>
+                </div>
+            </div>
+            <div class="accred-item">
+                <i class="fas fa-lock"></i>
+                <div>
+                    <strong>Normes Cybersécurité UEMOA</strong>
+                    <span>Protocoles de sécurité régionaux intégrés nativement</span>
+                </div>
+            </div>
+            <div class="accred-item">
+                <i class="fas fa-flag"></i>
+                <div>
+                    <strong>Landing Local Intégral</strong>
+                    <span>Zéro transit étranger — données sous juridiction nationale</span>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 
@@ -2013,7 +2219,7 @@
         <h2>La Force du <span>Nombre</span></h2>
         <div class="cx-divider"></div>
         <p class="cx-section-intro">
-            De Dakar à Kédougou, de Saint-Louis à Ziguinchor — la connexion comme droit fondamental pour chaque Sénégalais.
+            De Dakar à Kédougou, de Saint-Louis à Ziguinchor, des côtes atlantiques aux eaux du golfe de Guinée — Gaki Connect fait de la connectivité un droit fondamental, pas un privilège urbain.
         </p>
 
         <!-- Carte pleine largeur avec badges de villes -->
@@ -2035,25 +2241,25 @@
 
         <!-- 4 chiffres-clés sous la carte -->
         <div class="impact-numbers">
-            <div class="impact-num-card">
-                <div class="impact-num">500+</div>
-                <div class="impact-num-title">Emplois Directs</div>
-                <div class="impact-num-desc">100% recrutement local — ingénieurs, techniciens et agents de support sénégalais</div>
-            </div>
-            <div class="impact-num-card">
-                <div class="impact-num">100</div>
-                <div class="impact-num-title">Experts Cyber</div>
-                <div class="impact-num-desc">Cellule nationale dédiée à la protection des infrastructures critiques de l'État</div>
-            </div>
             <div class="impact-num-card gold-card">
                 <div class="impact-num">14</div>
                 <div class="impact-num-title">Régions Couvertes</div>
-                <div class="impact-num-desc">Tout le territoire sénégalais désenclavé via nœuds terrestres et kits GEO/LEO</div>
+                <div class="impact-num-desc">Tout le territoire sénégalais désenclavé — des zones blanches de Kédougou aux eaux territoriales</div>
             </div>
             <div class="impact-num-card">
-                <div class="impact-num">99,9%</div>
+                <div class="impact-num">500+</div>
+                <div class="impact-num-title">Emplois Directs</div>
+                <div class="impact-num-desc">100% recrutement local — ingénieurs, techniciens et experts cybersécurité sénégalais</div>
+            </div>
+            <div class="impact-num-card">
+                <div class="impact-num">99,99%</div>
                 <div class="impact-num-title">Disponibilité SLA</div>
-                <div class="impact-num-desc">Garanti 24h/24 · maritime inclus · insensible aux coupures de câbles sous-marins</div>
+                <div class="impact-num-desc">Continuité absolue · maritime inclus · insensible aux coupures de câbles sous-marins</div>
+            </div>
+            <div class="impact-num-card">
+                <div class="impact-num">0%</div>
+                <div class="impact-num-title">Transit Étranger</div>
+                <div class="impact-num-desc">Landing Local intégral — chaque flux de données reste sur le sol national, sous contrôle régalien</div>
             </div>
         </div>
     </div>
@@ -2064,58 +2270,49 @@
 ================================ -->
 <section id="comparison" class="cx-section">
     <div class="cx-container animate-on-scroll">
-        <span class="cx-section-badge"><i class="fas fa-balance-scale"></i> Comparatif</span>
-        <h2>GAKI Connect <span>vs</span> FAI Classique</h2>
+        <span class="cx-section-badge"><i class="fas fa-balance-scale"></i> Analyse Comparative</span>
+        <h2>GAKI Connect <span>vs</span> Opérateurs Standards</h2>
         <div class="cx-divider"></div>
-        <p class="cx-section-intro">Une infrastructure conçue pour la souveraineté nationale — pas pour la rentabilité d'une multinationale étrangère.</p>
+        <p class="cx-section-intro">Une infrastructure conçue pour la souveraineté et la résilience nationale — pas pour la seule rentabilité d'un acteur étranger.</p>
 
-        <div class="comparison-wrap">
-            <table class="cx-table">
-                <thead>
-                    <tr>
-                        <th>Critère</th>
-                        <th class="th-classic">FAI Classique</th>
-                        <th class="th-gaki">GAKI Connect</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Infrastructure locale</td>
-                        <td class="td-classic"><i class="fas fa-times ico-no"></i> Données transitant à l'étranger</td>
-                        <td class="td-gaki"><i class="fas fa-check ico-ok"></i> Landing local intégral</td>
-                    </tr>
-                    <tr>
-                        <td>Zones rurales</td>
-                        <td class="td-classic"><i class="fas fa-times ico-no"></i> Non rentables, ignorées</td>
-                        <td class="td-gaki"><i class="fas fa-check ico-ok"></i> Désenclavement prioritaire</td>
-                    </tr>
-                    <tr>
-                        <td>Couverture maritime</td>
-                        <td class="td-classic"><i class="fas fa-times ico-no"></i> Inexistante</td>
-                        <td class="td-gaki"><i class="fas fa-check ico-ok"></i> Flotte nationale connectée</td>
-                    </tr>
-                    <tr>
-                        <td>Cyberdéfense nationale</td>
-                        <td class="td-classic"><i class="fas fa-times ico-no"></i> Externalisée</td>
-                        <td class="td-gaki"><i class="fas fa-check ico-ok"></i> 100 experts dédiés</td>
-                    </tr>
-                    <tr>
-                        <td>Emplois créés</td>
-                        <td class="td-classic"><i class="fas fa-times ico-no"></i> Minimal, expatriés</td>
-                        <td class="td-gaki"><i class="fas fa-check ico-ok"></i> 500+ emplois locaux</td>
-                    </tr>
-                    <tr>
-                        <td>Conformité Loi 2022-21</td>
-                        <td class="td-classic"><i class="fas fa-times ico-no"></i> Partielle</td>
-                        <td class="td-gaki"><i class="fas fa-check ico-ok"></i> 100% conforme ARTP</td>
-                    </tr>
-                    <tr>
-                        <td>Disponibilité SLA</td>
-                        <td class="td-classic">~95%</td>
-                        <td class="td-gaki"><i class="fas fa-check ico-ok"></i> 99,9% garanti</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="compare-rows">
+            <!-- En-tête -->
+            <div class="compare-row compare-header">
+                <div class="compare-cell cell-label">Critère</div>
+                <div class="compare-cell cell-classic"><i class="fas fa-times" style="margin-right:.4rem;opacity:.5"></i>Opérateurs Standards</div>
+                <div class="compare-cell cell-gaki"><i class="fas fa-check" style="margin-right:.4rem"></i>GAKI Connect</div>
+            </div>
+            <!-- Lignes -->
+            <div class="compare-row">
+                <div class="compare-cell cell-label">Périmètre de Couverture</div>
+                <div class="compare-cell cell-classic"><i class="fas fa-times ico-no"></i>Concentration sur les zones urbaines à haute densité — zones rurales et blanches ignorées</div>
+                <div class="compare-cell cell-gaki"><i class="fas fa-check ico-ok"></i>Couverture totale : zones rurales, zones blanches et haute mer incluses</div>
+            </div>
+            <div class="compare-row">
+                <div class="compare-cell cell-label">Continuité de Service</div>
+                <div class="compare-cell cell-classic"><i class="fas fa-times ico-no"></i>Dépendance aux câbles sous-marins et infrastructures terrestres — ~95% de disponibilité</div>
+                <div class="compare-cell cell-gaki"><i class="fas fa-check ico-ok"></i>Architecture hybride GEO/LEO/L-Band — résilience absolue à 99,99%</div>
+            </div>
+            <div class="compare-row">
+                <div class="compare-cell cell-label">Gestion des Données</div>
+                <div class="compare-cell cell-classic"><i class="fas fa-times ico-no"></i>Transit international — données routées via des nœuds étrangers hors contrôle national</div>
+                <div class="compare-cell cell-gaki"><i class="fas fa-check ico-ok"></i>Landing Local Intégral — 100% des flux sécurisés sur le territoire national</div>
+            </div>
+            <div class="compare-row">
+                <div class="compare-cell cell-label">Connectivité Maritime</div>
+                <div class="compare-cell cell-classic"><i class="fas fa-times ico-no"></i>Inexistante ou très limitée — les flottes nationales en haute mer restent isolées</div>
+                <div class="compare-cell cell-gaki"><i class="fas fa-check ico-ok"></i>Technologie NexusWave dédiée haute mer — flottes nationales et internationales connectées</div>
+            </div>
+            <div class="compare-row">
+                <div class="compare-cell cell-label">Sécurité &amp; Monitoring</div>
+                <div class="compare-cell cell-classic"><i class="fas fa-times ico-no"></i>Protocoles mutualisés standard — pas d'unité dédiée à la cybersécurité nationale</div>
+                <div class="compare-cell cell-gaki"><i class="fas fa-check ico-ok"></i>Unité de Souveraineté dédiée + chiffrement AES-256 + NOC 24/7</div>
+            </div>
+            <div class="compare-row">
+                <div class="compare-cell cell-label">Positionnement Stratégique</div>
+                <div class="compare-cell cell-classic"><i class="fas fa-times ico-no"></i>Simple fournisseur d'accès — logique commerciale multinationale</div>
+                <div class="compare-cell cell-gaki"><i class="fas fa-check ico-ok"></i>Partenaire Stratégique d'Infrastructure pour l'autonomie numérique nationale</div>
+            </div>
         </div>
     </div>
 </section>
@@ -2132,20 +2329,20 @@
         <div class="faq-grid">
             <div class="faq-item">
                 <button class="faq-q" onclick="toggleFaq(this)">
-                    <span>Qu'est-ce que GAKI Connect exactement ?</span>
+                    <span>Qu'est-ce que Gaki Connect exactement ?</span>
                     <span class="faq-ico"><i class="fas fa-plus"></i></span>
                 </button>
                 <div class="faq-a">
-                    <p>GAKI Connect est le futur premier Fournisseur d'Accès Internet (FAI) souverain du Sénégal. Nous nous appuyons sur une infrastructure multi-orbite GEO/LEO (NexusWave) pour offrir une connectivité haute performance avec « landing local intégral » : les données des Sénégalais restent sur le sol national, protégées par notre unité de cyberdéfense dédiée de 100 experts.</p>
+                    <p>Gaki Connect est l'opérateur de souveraineté numérique du Groupe Gaki. Nous opérons une infrastructure hybride de nouvelle génération combinant les technologies satellites GEO, LEO et la Bande L. Notre mission est de fournir une connectivité critique, sécurisée et totalement indépendante des réseaux terrestres classiques, avec une garantie de « Landing Local » intégral — vos données ne quittent jamais le sol national.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-q" onclick="toggleFaq(this)">
-                    <span>Quand GAKI Connect sera-t-il opérationnel ?</span>
+                    <span>En quoi votre solution est-elle plus résiliente que la fibre optique ?</span>
                     <span class="faq-ico"><i class="fas fa-plus"></i></span>
                 </button>
                 <div class="faq-a">
-                    <p>Nous sommes actuellement en phase de candidature à la licence FAI auprès de l'ARTP, conformément à la Loi n°2022-21 du 19 juin 2022. Le déploiement Phase 1 (Dakar, Thiès, Saint-Louis, flotte maritime) est prévu pour 2026, suivi de l'extension vers toutes les régions en 2027, puis de l'internationalisation vers l'Afrique de l'Ouest dès 2028.</p>
+                    <p>Contrairement à la fibre optique, vulnérable aux ruptures de câbles sous-marins ou aux incidents de génie civil, notre architecture satellitaire multi-orbite assure une continuité de service absolue. En cas de défaillance d'un segment, le basculement automatique vers une autre orbite garantit une disponibilité de 99,99%, faisant de Gaki Connect le partenaire idéal pour les infrastructures critiques qui ne peuvent se permettre aucune interruption.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -2154,25 +2351,25 @@
                     <span class="faq-ico"><i class="fas fa-plus"></i></span>
                 </button>
                 <div class="faq-a">
-                    <p>Notre infrastructure intègre un Data Center souverain à Dakar-Plateau qui sert de point d'atterrissage pour tous les flux de données. Contrairement aux FAI classiques qui routent le trafic via des nœuds étrangers, chaque paquet traité par GAKI Connect reste sur le sol national. Notre unité de 100 experts en cybersécurité supervise l'intégrité des flux 24h/24, 7j/7, sans dépendance à des serveurs étrangers.</p>
+                    <p>La souveraineté est au cœur de notre ingénierie. Grâce à nos protocoles de « Landing Local », l'intégralité du trafic de nos clients est acheminée directement vers nos infrastructures basées à Dakar. Les flux ne transitent par aucun nœud international non contrôlé. Notre Unité de Veille assure une supervision permanente, garantissant que vos données restent sous juridiction nationale et sous protection souveraine.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-q" onclick="toggleFaq(this)">
-                    <span>Les zones rurales et la flotte maritime seront-elles couvertes ?</span>
+                    <span>Vos solutions sont-elles adaptées au secteur maritime ?</span>
                     <span class="faq-ico"><i class="fas fa-plus"></i></span>
                 </button>
                 <div class="faq-a">
-                    <p>C'est au cœur de notre mission. L'infrastructure GEO/LEO nous permet d'atteindre des zones sans infrastructure terrestre. La Phase 2 (2027) déploie des kits satellites dans les zones blanches de Matam, Tambacounda, Ziguinchor et Kédougou. La flotte nationale (COSAMA et ports) est couverte dès la Phase 1 pour prévenir les drames en mer — une priorité absolue inscrite dans notre vision.</p>
+                    <p>Absolument. Grâce à la technologie NexusWave, Gaki Connect offre une connectivité haut débit en haute mer comparable à une connexion terrestre. Nous accompagnons la flotte nationale (COSAMA) et les acteurs industriels maritimes pour transformer leurs navires en bureaux flottants connectés et sécurisés. Notre couverture s'étend aux eaux territoriales et aux axes stratégiques de l'Atlantique Ouest.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-q" onclick="toggleFaq(this)">
-                    <span>Comment rejoindre GAKI Connect ou devenir partenaire ?</span>
+                    <span>Quel est l'accompagnement proposé par Gaki Connect ?</span>
                     <span class="faq-ico"><i class="fas fa-plus"></i></span>
                 </button>
                 <div class="faq-a">
-                    <p>Pour les particuliers et entreprises, utilisez le module d'éligibilité dans l'Espace Institutionnel pour vérifier la disponibilité dans votre zone. Pour les partenariats avec des institutions publiques, ministères ou forces de défense, contactez directement notre direction stratégique via la page d'accueil. Notre équipe répond sous 48h ouvrables.</p>
+                    <p>Nous ne sommes pas un simple fournisseur, mais un partenaire d'infrastructure. Chaque déploiement est précédé d'un audit technique approfondi. Nous assurons l'installation, la configuration et une supervision 24h/24 et 7j/7 via notre Network Operations Center (NOC) à Dakar. Nos clients bénéficient d'un support d'élite local et d'une expertise en cybersécurité entièrement dédiée à leurs enjeux.</p>
                 </div>
             </div>
         </div>
@@ -2184,28 +2381,28 @@
 ================================ -->
 <section id="institution" class="cx-section">
     <div class="cx-container animate-on-scroll">
-        <span class="cx-section-badge gold-badge"><i class="fas fa-landmark"></i> Espace Institutionnel</span>
-        <h2>Partenariats &amp; <span class="gold">Éligibilité</span></h2>
+        <span class="cx-section-badge gold-badge"><i class="fas fa-landmark"></i> Partenariats Stratégiques</span>
+        <h2>Partenariats &amp; <span class="gold">Solutions Stratégiques</span></h2>
         <div class="cx-divider gold"></div>
         <p class="cx-section-intro">
-            Testez votre éligibilité par zone géographique ou contactez directement notre direction stratégique pour un partenariat institutionnel.
+            Unissons nos expertises pour bâtir l'infrastructure numérique de demain. Gaki Connect accompagne les acteurs publics et privés dans leurs défis de connectivité les plus complexes.
         </p>
 
         <div class="institution-layout">
             <!-- Module éligibilité -->
             <div class="eligibility-module">
-                <h3><i class="fas fa-satellite-dish" style="color:var(--cx-blue);margin-right:0.6rem"></i>Tester mon éligibilité</h3>
-                <p>Découvrez si votre zone est couverte en Phase 1 ou planifiée pour la Phase 2 du déploiement GAKI Connect.</p>
+                <h3><i class="fas fa-satellite-dish" style="color:var(--cx-blue);margin-right:0.6rem"></i>Consulter la Couverture Réseau</h3>
+                <p>Identifiez les solutions disponibles dans votre zone géographique. Gaki Connect déploie une infrastructure hybride garantissant un accès haut débit sur l'ensemble des pôles économiques et des axes maritimes.</p>
 
                 <select id="eligZone" class="elig-select">
-                    <option value="">— Sélectionnez votre région —</option>
-                    <optgroup label="Phase 1 – Zones actives">
+                    <option value="">— Sélectionnez votre zone d'intervention —</option>
+                    <optgroup label="Zones actives">
                         <option value="dakar">Dakar &amp; Grand Dakar</option>
                         <option value="thies">Thiès &amp; Mbour</option>
                         <option value="sl">Saint-Louis &amp; Louga</option>
-                        <option value="maritime">Zone Maritime / Flotte Nationale</option>
+                        <option value="maritime">Zone Maritime / Haute Mer</option>
                     </optgroup>
-                    <optgroup label="Phase 2 – Déploiement planifié">
+                    <optgroup label="Déploiement planifié">
                         <option value="matam">Matam &amp; Kaffrine</option>
                         <option value="tamb">Tambacounda &amp; Kolda</option>
                         <option value="zig">Ziguinchor (Casamance)</option>
@@ -2215,55 +2412,81 @@
                 </select>
 
                 <button class="elig-btn" id="eligBtn" onclick="checkEligibility()">
-                    <i class="fas fa-search"></i> Vérifier la disponibilité
+                    <i class="fas fa-search"></i> Vérifier la Disponibilité Technique
                 </button>
 
                 <div class="elig-result" id="eligResult"></div>
 
-                <!-- Légende zones -->
                 <div class="zone-legend">
                     <div class="zone-legend-item">
                         <span class="zone-dot covered"></span>
-                        <span><strong style="color:rgba(255,255,255,0.7)">Phase 1</strong> — Dakar, Thiès, Saint-Louis, Zone Maritime</span>
+                        <span><strong style="color:rgba(255,255,255,0.7)">Actif</strong> — Dakar, Thiès, Saint-Louis, Zone Maritime</span>
                     </div>
                     <div class="zone-legend-item">
                         <span class="zone-dot soon"></span>
-                        <span><strong style="color:rgba(255,255,255,0.7)">Phase 2</strong> — Matam, Tambacounda, Ziguinchor, Kédougou</span>
+                        <span><strong style="color:rgba(255,255,255,0.7)">Planifié</strong> — Matam, Tambacounda, Ziguinchor, Kédougou</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Partenariats redesigné -->
+            <!-- Partenariats -->
             <div class="partner-panel">
-                <h3>Rejoindre l'Écosystème GAKI Connect</h3>
-                <p class="partner-intro">GAKI Connect s'adresse aux acteurs qui font le Sénégal de demain — état, défense, entreprises. Contactez notre direction stratégique pour initier un partenariat.</p>
+                <h3>Partenariats Institutionnels &amp; Grands Comptes</h3>
+                <p class="partner-intro">Gaki Connect s'adresse aux structures exigeant une résilience absolue et une souveraineté totale de leurs échanges. Contactez notre direction stratégique pour une solution sur mesure.</p>
 
                 <div class="partner-types">
                     <div class="partner-type-card">
                         <div class="pt-icon"><i class="fas fa-landmark"></i></div>
                         <div>
-                            <strong>État &amp; Ministères</strong>
-                            <span>Accès sécurisé aux données souveraines, conformité ARTP, connectivité des services publics sans délocalisation.</span>
+                            <strong>États &amp; Institutions Publiques</strong>
+                            <span>Garantie de souveraineté numérique, conformité ARTP et sécurisation des services publics sans transit international.</span>
                         </div>
                     </div>
                     <div class="partner-type-card">
-                        <div class="pt-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="pt-icon"><i class="fas fa-shield-halved"></i></div>
                         <div>
                             <strong>Défense &amp; Sécurité Nationale</strong>
-                            <span>Infrastructure dédiée, chiffrement de niveau militaire, couverture maritime pour la prévention des drames en mer.</span>
+                            <span>Infrastructures critiques dédiées, chiffrement de grade militaire et couverture totale des eaux territoriales.</span>
                         </div>
                     </div>
                     <div class="partner-type-card">
-                        <div class="pt-icon"><i class="fas fa-city"></i></div>
+                        <div class="pt-icon"><i class="fas fa-industry"></i></div>
                         <div>
-                            <strong>Entreprises &amp; Grands Comptes</strong>
-                            <span>SLA 99,9%, bande passante dédiée, support 24h/24 — pour les opérations critiques qui ne tolèrent aucune coupure.</span>
+                            <strong>Entreprises &amp; Industries Critiques</strong>
+                            <span>SLA de 99,99%, bande passante garantie et support d'élite 24/7 pour les secteurs miniers, maritimes et bancaires.</span>
                         </div>
                     </div>
                 </div>
 
                 <a href="index.html#contact" class="btn-partner">
                     <i class="fas fa-handshake"></i> Contacter la Direction Stratégique
+                </a>
+            </div>
+        </div>
+
+        <!-- Pôles d'intervention -->
+        <div class="animate-on-scroll" style="margin-top:4rem;">
+            <p class="steps-label" style="margin-bottom:1.5rem"><i class="fas fa-crosshairs" style="margin-right:.4rem"></i>LES PÔLES D'INTERVENTION</p>
+            <div class="poles-grid">
+                <div class="pole-card">
+                    <div class="pole-card-icon"><i class="fas fa-flag"></i></div>
+                    <h4>États &amp; Institutions Publiques</h4>
+                    <p>Garantie de souveraineté numérique, conformité aux régulations nationales (ARTP) et sécurisation des services publics sans transit international.</p>
+                </div>
+                <div class="pole-card">
+                    <div class="pole-card-icon"><i class="fas fa-shield-halved"></i></div>
+                    <h4>Défense &amp; Sécurité Nationale</h4>
+                    <p>Infrastructures critiques dédiées, chiffrement de grade militaire et couverture totale des eaux territoriales pour la sécurisation des frontières.</p>
+                </div>
+                <div class="pole-card">
+                    <div class="pole-card-icon"><i class="fas fa-industry"></i></div>
+                    <h4>Entreprises &amp; Industries Critiques</h4>
+                    <p>SLA de 99,99%, bande passante garantie et support d'élite 24/7 pour les secteurs miniers, maritimes et bancaires ne tolérant aucune interruption.</p>
+                </div>
+            </div>
+            <div style="text-align:center">
+                <a href="index.html#contact" class="btn-cx-strategic">
+                    <i class="fas fa-satellite-dish"></i> Contacter la Direction Stratégique
                 </a>
             </div>
         </div>
