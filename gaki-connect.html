@@ -1590,6 +1590,111 @@
         color: var(--cx-muted);
         text-align: center;
     }
+    .partner-brands {
+        display: flex; align-items: center; gap: 0.45rem;
+        flex-wrap: wrap; justify-content: center; margin-bottom: 0.25rem;
+    }
+    .brand-pill {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800; font-size: 0.68rem;
+        letter-spacing: 0.1em; text-transform: uppercase;
+        padding: 0.28rem 0.75rem; border-radius: 6px;
+    }
+    .brand-sep { color: var(--cx-muted); font-weight: 700; font-size: 0.75rem; }
+    .brand-viasat  { background: rgba(0,120,200,0.18); color: #5BBFFF; border: 1px solid rgba(0,120,200,0.4); }
+    .brand-inmarsat{ background: rgba(0,60,150,0.18); color: #88CCFF; border: 1px solid rgba(0,60,150,0.35); }
+    .brand-cosama  { background: rgba(20,70,160,0.18); color: #70B0EE; border: 1px solid rgba(20,70,160,0.35); }
+    .brand-gaki    { background: rgba(193,39,53,0.15); color: var(--cx-gold-lt); border: 1px solid rgba(193,39,53,0.35); }
+    .brand-uemoa   { background: rgba(10,110,255,0.12); color: var(--cx-blue); border: 1px solid rgba(10,110,255,0.3); }
+    .partner-card-icon { font-size: 1.7rem; color: var(--cx-blue); opacity: 0.75; }
+    .partner-card-desc {
+        font-size: 0.71rem; color: var(--cx-muted);
+        text-align: center; line-height: 1.55; margin: 0;
+    }
+
+    /* ---- UEMOA Coverage Visual ---- */
+    .uemoa-coverage-visual {
+        background: rgba(10,110,255,0.03);
+        border: 1px solid rgba(10,110,255,0.14);
+        border-radius: 24px;
+        padding: 2.25rem 2rem;
+        margin-bottom: 2.5rem;
+        position: relative; overflow: hidden;
+    }
+    .uemoa-coverage-visual::before {
+        content: ''; position: absolute;
+        top: -80px; right: -80px;
+        width: 320px; height: 320px;
+        background: radial-gradient(circle, rgba(10,110,255,0.07), transparent 70%);
+        pointer-events: none;
+    }
+    .uemoa-visual-header {
+        display: flex; align-items: center; gap: 1rem;
+        margin-bottom: 1.75rem; padding-bottom: 1.25rem;
+        border-bottom: 1px solid rgba(10,110,255,0.12);
+    }
+    .uemoa-sat-icon {
+        width: 46px; height: 46px; border-radius: 12px;
+        background: linear-gradient(135deg, var(--cx-blue), var(--cx-blue-dim));
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.2rem; color: #fff; flex-shrink: 0;
+        box-shadow: 0 4px 14px var(--cx-blue-glow);
+    }
+    .uemoa-visual-header-text strong {
+        display: block;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800; font-size: 0.88rem;
+        text-transform: uppercase; letter-spacing: 0.1em; color: #fff;
+    }
+    .uemoa-visual-header-text span {
+        font-size: 0.75rem; color: var(--cx-blue);
+        font-family: 'Montserrat', sans-serif; font-weight: 600;
+    }
+    .uemoa-countries-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.85rem; margin-bottom: 1.5rem;
+    }
+    .uemoa-country-card {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(10,110,255,0.14);
+        border-radius: 12px; padding: 0.9rem 0.6rem;
+        display: flex; flex-direction: column;
+        align-items: center; gap: 0.35rem;
+        transition: all 0.3s ease;
+    }
+    .uemoa-country-card:hover {
+        background: rgba(10,110,255,0.08);
+        border-color: rgba(10,110,255,0.35);
+        transform: translateY(-2px);
+    }
+    .uemoa-country-card.country-hub {
+        background: rgba(10,110,255,0.1);
+        border-color: rgba(10,110,255,0.4);
+        border-width: 2px;
+    }
+    .country-flag { font-size: 1.7rem; line-height: 1; }
+    .country-name {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600; font-size: 0.67rem;
+        text-align: center; color: rgba(255,255,255,0.82);
+    }
+    .country-badge {
+        font-size: 0.55rem; font-family: 'Montserrat', sans-serif;
+        font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+        color: var(--cx-blue); background: rgba(10,110,255,0.15);
+        padding: 0.18rem 0.55rem; border-radius: 50px;
+    }
+    .uemoa-coverage-footer {
+        text-align: center; font-size: 0.72rem; color: var(--cx-muted);
+        font-family: 'Montserrat', sans-serif; letter-spacing: 0.07em;
+        text-transform: uppercase; padding-top: 1.1rem;
+        border-top: 1px solid rgba(10,110,255,0.1);
+    }
+    .uemoa-coverage-footer i { color: var(--cx-blue); margin-right: 0.4rem; }
+    @media (max-width: 640px) {
+        .uemoa-countries-grid { grid-template-columns: repeat(2, 1fr); }
+    }
     .coverage-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -2137,16 +2242,32 @@
         <!-- Logos partenaires -->
         <div class="partner-logos-grid">
             <div class="partner-logo-card">
-                <img src="images/partner-viasat-inmarsat.jpg" alt="Viasat & Inmarsat — Partenaires Technologiques">
+                <div class="partner-brands">
+                    <span class="brand-pill brand-viasat">Viasat</span>
+                    <span class="brand-sep">+</span>
+                    <span class="brand-pill brand-inmarsat">Inmarsat</span>
+                </div>
+                <i class="fas fa-satellite partner-card-icon"></i>
                 <span>Partenaires Satellitaires Mondiaux</span>
+                <p class="partner-card-desc">Accès prioritaire aux constellations GEO &amp; LEO — couverture Ka/L-Band mondiale</p>
             </div>
             <div class="partner-logo-card">
-                <img src="images/partner-cosama.png" alt="COSAMA SA — Consortium Sénégalais d'Activités Maritimes">
+                <div class="partner-brands">
+                    <span class="brand-pill brand-cosama">COSAMA SA</span>
+                </div>
+                <i class="fas fa-ship partner-card-icon"></i>
                 <span>Partenaire Maritime National</span>
+                <p class="partner-card-desc">Consortium Sénégalais d'Activités Maritimes — flotte nationale connectée en haute mer</p>
             </div>
             <div class="partner-logo-card">
-                <img src="images/partner-gaki-uemoa.jpg" alt="GAKI Connect — Souveraineté Régionale UEMOA">
-                <span>Couverture Régionale UEMOA</span>
+                <div class="partner-brands">
+                    <span class="brand-pill brand-gaki">GAKI</span>
+                    <span class="brand-sep">×</span>
+                    <span class="brand-pill brand-uemoa">UEMOA</span>
+                </div>
+                <i class="fas fa-globe-africa partner-card-icon"></i>
+                <span>Déploiement Régional UEMOA</span>
+                <p class="partner-card-desc">Accord stratégique régional — 8 États membres · 3,2 millions km² couverts</p>
             </div>
         </div>
 
@@ -2219,32 +2340,64 @@
         <h2>La Force du <span>Nombre</span></h2>
         <div class="cx-divider"></div>
         <p class="cx-section-intro">
-            De Dakar à Kédougou, de Saint-Louis à Ziguinchor, des côtes atlantiques aux eaux du golfe de Guinée — Gaki Connect fait de la connectivité un droit fondamental, pas un privilège urbain.
+            Du Sénégal au Niger, de la Côte d'Ivoire au Bénin — Gaki Connect déploie une infrastructure de souveraineté numérique à l'échelle de toute la zone UEMOA, faisant de la connectivité un droit fondamental pour 8 États membres.
         </p>
 
-        <!-- Carte pleine largeur avec badges de villes -->
-        <div class="impact-map-block">
-            <img src="Gemini_Generated_Image_a4i8l9a4i8l9a4i8.png"
-                 alt="Carte du Sénégal – Déploiement GAKI Connect"
-                 class="senegal-map-img" id="senegalMap" />
-
-            <!-- Badges positionnés sur la carte -->
-            <div class="map-badge badge-gold mb-dakar">
-                <span class="mb-dot"></span>
-                <span class="mb-label"><small>Data Center Souverain</small></span>
+        <!-- Visualisation UEMOA -->
+        <div class="uemoa-coverage-visual">
+            <div class="uemoa-visual-header">
+                <div class="uemoa-sat-icon"><i class="fas fa-satellite-dish"></i></div>
+                <div class="uemoa-visual-header-text">
+                    <strong>Zone de Couverture Souveraine</strong>
+                    <span><i class="fas fa-signal"></i> UEMOA · Infrastructure Active · Satellite GEO/LEO/L-Band</span>
+                </div>
             </div>
-            <div class="map-badge mb-stlouis"><span class="mb-dot"></span></div>
-            <div class="map-badge mb-matam"><span class="mb-dot"></span></div>
-            <div class="map-badge mb-zig"><span class="mb-dot"></span></div>
-            <div class="map-badge mb-kedougou"><span class="mb-dot"></span></div>
+            <div class="uemoa-countries-grid">
+                <div class="uemoa-country-card country-hub">
+                    <span class="country-flag">🇸🇳</span>
+                    <span class="country-name">Sénégal</span>
+                    <span class="country-badge">Hub Principal</span>
+                </div>
+                <div class="uemoa-country-card">
+                    <span class="country-flag">🇨🇮</span>
+                    <span class="country-name">Côte d'Ivoire</span>
+                </div>
+                <div class="uemoa-country-card">
+                    <span class="country-flag">🇲🇱</span>
+                    <span class="country-name">Mali</span>
+                </div>
+                <div class="uemoa-country-card">
+                    <span class="country-flag">🇧🇫</span>
+                    <span class="country-name">Burkina Faso</span>
+                </div>
+                <div class="uemoa-country-card">
+                    <span class="country-flag">🇳🇪</span>
+                    <span class="country-name">Niger</span>
+                </div>
+                <div class="uemoa-country-card">
+                    <span class="country-flag">🇹🇬</span>
+                    <span class="country-name">Togo</span>
+                </div>
+                <div class="uemoa-country-card">
+                    <span class="country-flag">🇧🇯</span>
+                    <span class="country-name">Bénin</span>
+                </div>
+                <div class="uemoa-country-card">
+                    <span class="country-flag">🇬🇼</span>
+                    <span class="country-name">Guinée-Bissau</span>
+                </div>
+            </div>
+            <div class="uemoa-coverage-footer">
+                <i class="fas fa-check-circle"></i>8 États Membres · 3 200 000 km² · Couverture Satellite Permanente · Data Souverain
+            </div>
         </div>
 
         <!-- 4 chiffres-clés sous la carte -->
         <div class="impact-numbers">
             <div class="impact-num-card gold-card">
-                <div class="impact-num">14</div>
-                <div class="impact-num-title">Régions Couvertes</div>
-                <div class="impact-num-desc">Tout le territoire sénégalais désenclavé — des zones blanches de Kédougou aux eaux territoriales</div>
+                <div class="impact-num">8</div>
+                <div class="impact-num-title">États UEMOA</div>
+                <div class="impact-num-desc">Présence régionale couvrant 3,2 M km² — des zones urbaines aux zones blanches les plus reculées</div>
             </div>
             <div class="impact-num-card">
                 <div class="impact-num">500+</div>
