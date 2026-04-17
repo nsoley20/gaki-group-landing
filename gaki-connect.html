@@ -1324,7 +1324,7 @@
     }
     .steps-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 1.5rem;
         position: relative;
     }
@@ -1509,7 +1509,7 @@
 
     /* ---- RESPONSIVE NEW SECTIONS ---- */
     @media (max-width: 768px) {
-        .steps-grid { grid-template-columns: 1fr; }
+        .steps-grid { grid-template-columns: 1fr 1fr; }
         .steps-grid::before { display: none; }
         .roadmap-phase { grid-template-columns: 1fr; gap: 1rem; }
         .roadmap-spine, .rp-center { display: none; }
@@ -1573,6 +1573,7 @@
         .cx-stat-num { font-size: 1.1rem; }
         .footer-grid { gap: 2rem; }
         .eligibility-module, .partner-panel { padding: 1.75rem 1.25rem; }
+        .steps-grid { grid-template-columns: 1fr; }
     }
     </style>
 </head>
@@ -1620,9 +1621,9 @@
             FAI Souverain · NexusWave · GEO/LEO
         </div>
         <h1>GAKI <span>CONNECT</span></h1>
-        <p class="connect-hero-sub">"Au-delà de la connexion, nous bâtissons l'indépendance."</p>
+        <p class="connect-hero-sub">"Au-delà de la connectivité, nous forgeons les infrastructures de la souveraineté numérique. "</p>
         <p class="connect-hero-desc">
-            Nous ne sommes pas un simple fournisseur d'accès. Nous sommes les architectes de la souveraineté numérique du Sénégal, une infrastructure qui garantit que chaque bit de donnée reste sur le sol national.
+            Gaki Connect transcende le rôle de fournisseur d'accès pour devenir l'opérateur des infrastructures critiques. Nous concevons les solutions de connectivité sécurisées qui garantissent la continuité de service et la souveraineté numérique de nos territoires.
         </p>
 
         <div class="connect-hero-btns">
@@ -1679,72 +1680,70 @@
 <section id="vision" class="cx-section">
     <div class="cx-container animate-on-scroll">
         <span class="cx-section-badge"><i class="fas fa-bullseye"></i> Vision &amp; Mission</span>
-        <h2>L'Architecte de la <span>Liberté</span></h2>
+        <h2>L'Excellence Technologique au Service de la <span>Souveraineté</span></h2>
         <div class="cx-divider"></div>
         <p class="cx-section-intro">
-            GAKI Connect n'est pas un simple fournisseur d'accès. Nous sommes les architectes de la souveraineté numérique du Sénégal, connectant ceux que le marché a oubliés.
+            La mission de Gaki Connect est de concevoir et d'opérer les infrastructures de connectivité les plus résilientes d'Afrique de l'Ouest. Nous ne nous contentons pas de fournir un accès ; nous bâtissons les fondations numériques nécessaires à l'autonomie stratégique des États et à la performance des industries critiques.
         </p>
 
         <div class="vision-grid">
             <div class="vision-text">
                 <h3>Notre Mission</h3>
                 <p>
-                    Garantir que <strong>chaque bit de donnée, chaque transaction et chaque échange</strong> reste sur le sol national. Nous connectons ceux que le marché a oubliés — du village le plus reculé à l'axe maritime vital de la Casamance.
+                    Garantir que <strong>chaque bit de donnée, chaque transaction et chaque échange</strong> reste sous contrôle national et régalien. Nous transformons chaque zone blanche en un hub d'opportunités stratégiques grâce à une ingénierie de pointe.
                 </p>
-                <p>
-                    Ancrés dans les articles 67 à 71 de la Loi n° 2022-21 du 19 juin 2022, nous construisons une infrastructure qui sera le <strong>bras armé de l'État pour le désenclavement numérique total</strong> et la sécurisation des flux stratégiques nationaux.
+                <p style="margin-top:1.25rem; font-family:'Montserrat',sans-serif; font-size:0.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--cx-blue); opacity:.85;">
+                    <i class="fas fa-layer-group" style="margin-right:.4rem"></i>Nos trois piliers d'intervention
                 </p>
             </div>
             <ul class="vision-points">
                 <li class="vision-point">
+                    <div class="vision-point-icon"><i class="fas fa-shield-halved"></i></div>
+                    <div class="vision-point-text">
+                        <strong>Garantir la Continuité Critique</strong>
+                        <span>Disponibilité de service de 99,99% pour les infrastructures maritimes, terrestres et institutionnelles, même dans les conditions les plus extrêmes.</span>
+                    </div>
+                </li>
+                <li class="vision-point">
                     <div class="vision-point-icon"><i class="fas fa-lock"></i></div>
                     <div class="vision-point-text">
-                        <strong>Données 100% Nationales</strong>
-                        <span>Aucune donnée ne quitte le territoire. Notre Data Center souverain à Dakar est le gardien de vos flux.</span>
+                        <strong>Verrouiller la Souveraineté Numérique</strong>
+                        <span>Imposer le standard du « Landing Local » pour que chaque flux de données reste sous contrôle national et régalien.</span>
                     </div>
                 </li>
                 <li class="vision-point">
                     <div class="vision-point-icon"><i class="fas fa-satellite"></i></div>
                     <div class="vision-point-text">
-                        <strong>Multi-Orbite GEO/LEO</strong>
-                        <span>Combinaison de la stabilité géostationnaire et de la faible latence des satellites en orbite basse.</span>
-                    </div>
-                </li>
-                <li class="vision-point">
-                    <div class="vision-point-icon"><i class="fas fa-users"></i></div>
-                    <div class="vision-point-text">
-                        <strong>500 Experts Sénégalais</strong>
-                        <span>100% d'emplois directs locaux dès la phase d'amorçage, encadrés par GAKI Academy.</span>
-                    </div>
-                </li>
-                <li class="vision-point">
-                    <div class="vision-point-icon"><i class="fas fa-anchor"></i></div>
-                    <div class="vision-point-text">
-                        <strong>Maritime &amp; Rural</strong>
-                        <span>Couverture de la flotte nationale COSAMA et des zones rurales non accessibles par réseau terrestre.</span>
+                        <strong>Désenclaver par l'Innovation</strong>
+                        <span>Transformer les zones blanches en hubs d'opportunités économiques grâce à l'hybridation satellite de nouvelle génération (GEO/LEO/L-Band).</span>
                     </div>
                 </li>
             </ul>
         </div>
 
-        <!-- Comment ça marche -->
+        <!-- POURQUOI CHOISIR GAKI CONNECT ? -->
         <div class="steps-wrap animate-on-scroll">
-            <p class="steps-label"><i class="fas fa-circle-nodes" style="margin-right:.4rem"></i>Comment ça marche</p>
+            <p class="steps-label"><i class="fas fa-circle-nodes" style="margin-right:.4rem"></i>POURQUOI CHOISIR GAKI CONNECT ?</p>
             <div class="steps-grid">
                 <div class="step-card">
                     <div class="step-num">1</div>
-                    <h4>Candidature &amp; Licence</h4>
-                    <p>GAKI Connect dépose son dossier auprès de l'ARTP, fondé sur la Loi n° 2022-21. La licence FAI est en cours d'instruction.</p>
+                    <h4>Une Expertise de Pointe et Certifiée</h4>
+                    <p>Gaki Connect s'appuie sur des partenariats technologiques mondiaux et une ingénierie locale de haut niveau. Nos solutions de connectivité hybride sont conçues pour répondre aux standards de sécurité les plus rigoureux des télécommunications.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-num">2</div>
-                    <h4>Déploiement de l'Infrastructure</h4>
-                    <p>Installation du Data Center souverain à Dakar, mise en orbite du partenariat NexusWave/Viasat et déploiement des kits terrain.</p>
+                    <h4>Disponibilité et Résilience Absolue</h4>
+                    <p>Grâce à l'hybridation multi-orbite (GEO/LEO/L-Band), nous garantissons une continuité de service de 99,99%. Nos infrastructures restent opérationnelles là où les réseaux traditionnels atteignent leurs limites.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-num">3</div>
-                    <h4>Connexion &amp; Supervision</h4>
-                    <p>Activation des zones prioritaires, 500 experts en poste, et monitoring 24h/24 par l'Unité de Veille Nationale GAKI Connect.</p>
+                    <h4>Engagement pour la Souveraineté</h4>
+                    <p>Nous sommes le seul opérateur à intégrer nativement le protocole de « Landing Local ». En choisissant Gaki Connect, vous garantissez que vos flux de données restent sous contrôle régalien, hébergés sur le territoire national.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">4</div>
+                    <h4>Agilité et Accompagnement Stratégique</h4>
+                    <p>Au-delà de la fourniture d'accès, nous agissons comme partenaire conseil. Notre structure agile déploie des solutions sur mesure en un temps record, que ce soit pour des flottes maritimes, des sites industriels ou des institutions publiques.</p>
                 </div>
             </div>
         </div>
@@ -1757,11 +1756,11 @@
 ================================ -->
 <section id="nexuswave" class="cx-section cx-section-alt">
     <div class="cx-container animate-on-scroll">
-        <span class="cx-section-badge"><i class="fas fa-satellite"></i> Infrastructure</span>
-        <h2>La Puissance <span>NexusWave</span></h2>
+        <span class="cx-section-badge"><i class="fas fa-layer-group"></i> Nos Solutions</span>
+        <h2>Une Architecture <span>Sur Mesure</span> pour Chaque Défi</h2>
         <div class="cx-divider"></div>
         <p class="cx-section-intro">
-            Une architecture hybride multi-orbite unique au Sénégal. Conçue avec l'expertise de NexusWave/Viasat pour une résilience absolue.
+            Chez Gaki Connect, nous ne croyons pas aux solutions génériques. Grâce à notre partenariat stratégique avec les leaders mondiaux des télécommunications satellitaires, nous disposons d'un portefeuille technologique étendu pour répondre avec précision à chaque exigence opérationnelle.
         </p>
 
         <!-- Métriques clés -->
@@ -1771,7 +1770,7 @@
                 <span class="ns-label">Latence LEO</span>
             </div>
             <div class="nexus-strip-item">
-                <span class="ns-value">99.9<span class="ns-unit">%</span></span>
+                <span class="ns-value">99.99<span class="ns-unit">%</span></span>
                 <span class="ns-label">Disponibilité</span>
             </div>
             <div class="nexus-strip-item">
@@ -1779,7 +1778,7 @@
                 <span class="ns-label">Landing Local</span>
             </div>
             <div class="nexus-strip-item">
-                <span class="ns-value" style="font-size:1.25rem;letter-spacing:0">GEO&nbsp;<span class="ns-unit">+</span>&nbsp;LEO</span>
+                <span class="ns-value" style="font-size:1.1rem;letter-spacing:0">GEO&nbsp;<span class="ns-unit">+</span>&nbsp;LEO&nbsp;<span class="ns-unit">+</span>&nbsp;L</span>
                 <span class="ns-label">Multi-Orbite</span>
             </div>
         </div>
@@ -1789,67 +1788,40 @@
                 <div class="nexus-spec-card">
                     <div class="nexus-spec-icon"><i class="fas fa-satellite-dish"></i></div>
                     <div>
-                        <h4>Alliance GEO/LEO</h4>
-                        <p>Combinaison des satellites géostationnaires (stabilité, couverture nationale) et des satellites en orbite basse (latence &lt;50ms, débit ultra-rapide). Une synergie unique au Sénégal.</p>
+                        <h4>1. Solutions Multi-Orbites &amp; Hybrides</h4>
+                        <p>Nous intégrons les meilleures capacités des orbites GEO (Haute Capacité) et LEO (Basse Latence). Cette approche délivre une connectivité ultra-rapide et stable, adaptée aussi bien au désenclavement rural qu'aux applications industrielles complexes.</p>
                     </div>
                 </div>
                 <div class="nexus-spec-card">
-                    <div class="nexus-spec-icon"><i class="fas fa-map-pin"></i></div>
+                    <div class="nexus-spec-icon"><i class="fas fa-ship"></i></div>
                     <div>
-                        <h4>Landing Local Intégral</h4>
-                        <p>Contrairement aux opérateurs classiques, 100% de nos flux transitent par notre point d'ancrage souverain à Dakar. Zéro transit étranger des données nationales.</p>
+                        <h4>2. NexusWave : L'Excellence Maritime</h4>
+                        <p>Pour les environnements hauturiers, nous déployons la technologie NexusWave. Ce service réseau entièrement géré fusionne les liens satellites pour offrir une connectivité haut débit continue, sécurisée et intelligente, spécifiquement conçue pour les flottes nationales et internationales.</p>
                     </div>
                 </div>
                 <div class="nexus-spec-card">
-                    <div class="nexus-spec-icon"><i class="fas fa-infinity"></i></div>
+                    <div class="nexus-spec-icon"><i class="fas fa-broadcast-tower"></i></div>
                     <div>
-                        <h4>Résilience Totale · 99.9%</h4>
-                        <p>Infrastructure insensible aux coupures de câbles sous-marins qui paralysent les FAI traditionnels. Disponibilité garantie 24h/24, 7j/7.</p>
+                        <h4>3. Continuité Critique en Bande L</h4>
+                        <p>Pour les communications régaliennes et de sécurité, nous exploitons la Bande L — une fréquence résiliente et insensible aux conditions météorologiques extrêmes. C'est la garantie d'un lien permanent pour les missions de sauvetage et la coordination d'État.</p>
                     </div>
                 </div>
                 <div class="nexus-spec-card">
-                    <div class="nexus-spec-icon"><i class="fas fa-server"></i></div>
+                    <div class="nexus-spec-icon"><i class="fas fa-network-wired"></i></div>
                     <div>
-                        <h4>Data Center Souverain</h4>
-                        <p>Centre de données national à Dakar — gardien des flux stratégiques de l'État, des entreprises et des citoyens sénégalais.</p>
+                        <h4>4. Connectivité Enterprise &amp; IoT</h4>
+                        <p>Solutions dédiées à l'interconnexion de sites distants, à la gestion de capteurs intelligents (IoT) et à la sécurisation des infrastructures critiques terrestres via des protocoles SD-WAN avancés.</p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Dashboard Panel -->
-            <div class="nexus-dashboard">
-                <div class="ndp-header">
-                    <span class="ndp-dot ndp-dot-green"></span>
-                    <span class="ndp-dot ndp-dot-yellow"></span>
-                    <span class="ndp-dot ndp-dot-red"></span>
-                    <span class="ndp-title">NEXUSWAVE NETWORK · DASHBOARD</span>
-                </div>
-                <div class="ndp-stats">
-                    <div>
-                        <div class="ndp-stat-label">Latence Réseau</div>
-                        <div class="ndp-stat-value">&lt; 50<span class="ndp-unit">ms</span></div>
-                        <div class="ndp-bar"><div class="ndp-bar-fill" style="width:92%"></div></div>
-                    </div>
-                    <div class="ndp-divider"></div>
-                    <div>
-                        <div class="ndp-stat-label">Disponibilité</div>
-                        <div class="ndp-stat-value">99.9<span class="ndp-unit">%</span></div>
-                        <div class="ndp-bar"><div class="ndp-bar-fill" style="width:99.9%"></div></div>
-                    </div>
-                    <div class="ndp-divider"></div>
-                    <div>
-                        <div class="ndp-stat-label">Souveraineté des Données</div>
-                        <div class="ndp-stat-value gold-val">100<span class="ndp-unit">%</span></div>
-                        <div class="ndp-bar"><div class="ndp-bar-fill gold-fill" style="width:100%"></div></div>
-                    </div>
-                    <div class="ndp-divider"></div>
-                    <div>
-                        <div class="ndp-stat-label">Experts Sénégalais Mobilisés</div>
-                        <div class="ndp-stat-value">500<span class="ndp-unit">+</span></div>
-                        <div class="ndp-bar"><div class="ndp-bar-fill" style="width:75%"></div></div>
-                    </div>
-                </div>
-            </div>
+        <!-- Engagement -->
+        <div class="steps-wrap animate-on-scroll" style="margin-top:2.5rem;">
+            <p class="steps-label"><i class="fas fa-handshake" style="margin-right:.4rem"></i>L'ENGAGEMENT GAKI CONNECT</p>
+            <p style="text-align:center; color:var(--cx-muted); font-size:0.9rem; line-height:1.75; max-width:720px; margin:0 auto;">
+                Chaque projet fait l'objet d'une expertise technique préalable. Notre rôle est de sélectionner, d'assembler et d'opérer la combinaison technologique la plus performante pour <strong style="color:var(--cx-text)">garantir votre autonomie et votre efficacité</strong>.
+            </p>
         </div>
     </div>
 </section>
@@ -1859,30 +1831,30 @@
 ================================ -->
 <section id="souverainete" class="cx-section">
     <div class="cx-container animate-on-scroll">
-        <span class="cx-section-badge gold-badge"><i class="fas fa-shield-alt"></i> Cyber-Défense</span>
-        <h2>Le Bouclier <span class="gold">Numérique</span></h2>
+        <span class="cx-section-badge gold-badge"><i class="fas fa-shield-halved"></i> Souveraineté Numérique</span>
+        <h2>L'Infrastructure de <span class="gold">Souveraineté Numérique</span></h2>
         <div class="cx-divider gold"></div>
         <p class="cx-section-intro">
-            "Vos données sont une richesse nationale — nous en sommes les gardiens."
+            « Garantir l'intégrité des données nationales pour assurer l'autonomie stratégique de demain. »
         </p>
 
-        <!-- Chiffres-clés -->
+        <!-- Indicateurs régaliens -->
         <div class="souv-metric-strip">
             <div class="sms-item">
-                <span class="sms-value">100</span>
-                <span class="sms-label">Experts Cybersécurité</span>
+                <span class="sms-value"><i class="fas fa-shield-halved" style="font-size:1.5rem"></i></span>
+                <span class="sms-label">Cyber-résilience Active</span>
             </div>
             <div class="sms-item">
-                <span class="sms-value">0</span>
+                <span class="sms-value">0<span style="font-size:0.75rem; font-weight:600">%</span></span>
                 <span class="sms-label">Transit Étranger</span>
             </div>
             <div class="sms-item">
                 <span class="sms-value" style="font-size:1.15rem">AES‑256</span>
-                <span class="sms-label">Chiffrement</span>
+                <span class="sms-label">Grade Militaire</span>
             </div>
             <div class="sms-item">
                 <span class="sms-value" style="font-size:1.15rem">24/7</span>
-                <span class="sms-label">Surveillance Active</span>
+                <span class="sms-label">NOC · Vigilance</span>
             </div>
         </div>
 
@@ -1890,26 +1862,26 @@
             <div class="souv-card gold-accent">
                 <span class="souv-card-num">01</span>
                 <div class="souv-card-icon"><i class="fas fa-landmark"></i></div>
-                <h4>Contrôle Étatique Total</h4>
-                <p>Infrastructure conçue pour offrir aux autorités sénégalaises un droit de regard absolu sur les flux stratégiques nationaux. L'État reste maître de son espace numérique.</p>
+                <h4>Audit et Transparence Institutionnelle</h4>
+                <p>Notre infrastructure est conçue pour offrir aux autorités régulatrices une visibilité totale sur la conformité des flux stratégiques. Gaki Connect s'inscrit comme un partenaire technique de l'État, garantissant que la nation reste maîtresse de son espace numérique.</p>
             </div>
             <div class="souv-card">
                 <span class="souv-card-num">02</span>
                 <div class="souv-card-icon"><i class="fas fa-user-shield"></i></div>
-                <h4>Unité de Veille Nationale</h4>
-                <p>100 experts sénégalais en cybersécurité déployés pour la protection des infrastructures critiques et la lutte active contre les menaces numériques en temps réel.</p>
+                <h4>Unité de Veille et d'Expertise</h4>
+                <p>Une équipe d'ingénieurs et d'experts en cybersécurité est mobilisée pour la surveillance des infrastructures critiques. Cette unité assure la détection proactive et la réponse aux incidents, renforçant ainsi la robustesse du réseau national.</p>
             </div>
             <div class="souv-card">
                 <span class="souv-card-num">03</span>
                 <div class="souv-card-icon"><i class="fas fa-lock"></i></div>
-                <h4>Chiffrement AES-256</h4>
-                <p>Protocoles de chiffrement militaire pour chaque flux de données. L'intégrité des communications de l'État, des forces de défense et des entreprises nationales est garantie.</p>
+                <h4>Sécurité de Grade Militaire</h4>
+                <p>Chiffrement avancé AES-256 pour une confidentialité absolue des échanges institutionnels. L'intégrité des communications de l'État, des forces de défense et des entreprises nationales est garantie.</p>
             </div>
             <div class="souv-card gold-accent">
                 <span class="souv-card-num">04</span>
                 <div class="souv-card-icon"><i class="fas fa-eye"></i></div>
-                <h4>Monitoring 24h/24</h4>
-                <p>Surveillance en temps réel de tous les flux entrants et sortants. Détection proactive des intrusions avec réponse immédiate — aucun événement critique ne passe inaperçu.</p>
+                <h4>Vigilance 24/7 · NOC</h4>
+                <p>Monitoring permanent assuré par le Centre d'Opérations Réseau (NOC). Surveillance en temps réel et détection proactive des menaces — aucun événement critique ne passe inaperçu.</p>
             </div>
         </div>
     </div>
