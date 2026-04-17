@@ -1267,6 +1267,52 @@
     .zone-dot.covered { background: #10B981; box-shadow: 0 0 6px rgba(16,185,129,0.5); }
     .zone-dot.soon    { background: var(--cx-gold-lt); box-shadow: 0 0 6px rgba(232,93,106,0.4); }
 
+    /* ---- CONTACT FORM B2B ---- */
+    .contact-form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.9rem;
+    }
+    .cf-field { display: flex; flex-direction: column; gap: 0.4rem; }
+    .cf-field.cf-full { grid-column: 1 / -1; }
+    .cf-label {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600; font-size: 0.73rem;
+        text-transform: uppercase; letter-spacing: 0.07em;
+        color: rgba(255,255,255,0.6);
+    }
+    .cf-input {
+        background: rgba(10,110,255,0.06);
+        border: 1px solid rgba(10,110,255,0.22);
+        border-radius: 10px;
+        padding: 0.75rem 1rem;
+        color: rgba(255,255,255,0.85);
+        font-family: 'Inter', sans-serif;
+        font-size: 0.87rem;
+        outline: none;
+        transition: border-color 0.25s, box-shadow 0.25s;
+        width: 100%;
+    }
+    .cf-input::placeholder { color: rgba(255,255,255,0.28); }
+    .cf-input:focus {
+        border-color: rgba(10,110,255,0.5);
+        box-shadow: 0 0 0 3px rgba(10,110,255,0.1);
+    }
+    .cf-select {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234D9AFF' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        padding-right: 2.5rem;
+        cursor: pointer;
+    }
+    .cf-select option { background: #0A1830; color: #fff; }
+    .cf-textarea { resize: vertical; min-height: 90px; }
+    @media (max-width: 640px) {
+        .contact-form-grid { grid-template-columns: 1fr; }
+        .cf-field.cf-full { grid-column: 1; }
+    }
+
     /* ---- PARTNER PANEL ---- */
     .partner-panel {
         background: linear-gradient(135deg, rgba(10,110,255,0.07), rgba(10,110,255,0.03));
@@ -1976,7 +2022,7 @@
 
         <div class="connect-hero-btns">
             <a href="#institution" class="btn-cx-primary">
-                <i class="fas fa-satellite-dish"></i> Tester mon éligibilité
+                <i class="fas fa-paper-plane"></i> Soumettre un Projet
             </a>
             <a href="#nexuswave" class="btn-cx-secondary">
                 <i class="fas fa-satellite"></i> Découvrir NexusWave
@@ -2500,44 +2546,46 @@
         </p>
 
         <div class="institution-layout">
-            <!-- Module éligibilité -->
+            <!-- Formulaire de contact B2B -->
             <div class="eligibility-module">
-                <h3><i class="fas fa-satellite-dish" style="color:var(--cx-blue);margin-right:0.6rem"></i>Consulter la Couverture Réseau</h3>
-                <p>Identifiez les solutions disponibles dans votre zone géographique. Gaki Connect déploie une infrastructure hybride garantissant un accès haut débit sur l'ensemble des pôles économiques et des axes maritimes.</p>
+                <h3><i class="fas fa-paper-plane" style="color:var(--cx-blue);margin-right:0.6rem"></i>Demander une Étude Technique</h3>
+                <p style="margin-bottom:1.5rem">Décrivez votre projet de connectivité. Nos ingénieurs analysent vos contraintes opérationnelles et vous proposent une architecture sur mesure sous 48h.</p>
 
-                <select id="eligZone" class="elig-select">
-                    <option value="">— Sélectionnez votre zone d'intervention —</option>
-                    <optgroup label="Zones actives">
-                        <option value="dakar">Dakar &amp; Grand Dakar</option>
-                        <option value="thies">Thiès &amp; Mbour</option>
-                        <option value="sl">Saint-Louis &amp; Louga</option>
-                        <option value="maritime">Zone Maritime / Haute Mer</option>
-                    </optgroup>
-                    <optgroup label="Déploiement planifié">
-                        <option value="matam">Matam &amp; Kaffrine</option>
-                        <option value="tamb">Tambacounda &amp; Kolda</option>
-                        <option value="zig">Ziguinchor (Casamance)</option>
-                        <option value="kedougou">Kédougou &amp; Sédhiou</option>
-                        <option value="rural">Zone Rurale / Isolée</option>
-                    </optgroup>
-                </select>
-
-                <button class="elig-btn" id="eligBtn" onclick="checkEligibility()">
-                    <i class="fas fa-search"></i> Vérifier la Disponibilité Technique
-                </button>
-
-                <div class="elig-result" id="eligResult"></div>
-
-                <div class="zone-legend">
-                    <div class="zone-legend-item">
-                        <span class="zone-dot covered"></span>
-                        <span><strong style="color:rgba(255,255,255,0.7)">Actif</strong> — Dakar, Thiès, Saint-Louis, Zone Maritime</span>
+                <div class="contact-form-grid">
+                    <div class="cf-field">
+                        <label class="cf-label">Nom &amp; Prénom</label>
+                        <input type="text" class="cf-input" placeholder="Ex : Ibrahima Diallo">
                     </div>
-                    <div class="zone-legend-item">
-                        <span class="zone-dot soon"></span>
-                        <span><strong style="color:rgba(255,255,255,0.7)">Planifié</strong> — Matam, Tambacounda, Ziguinchor, Kédougou</span>
+                    <div class="cf-field">
+                        <label class="cf-label">Organisation</label>
+                        <input type="text" class="cf-input" placeholder="Ministère, entreprise, institution…">
+                    </div>
+                    <div class="cf-field cf-full">
+                        <label class="cf-label">Secteur d'activité</label>
+                        <select class="cf-input cf-select">
+                            <option value="">— Sélectionnez votre secteur —</option>
+                            <option>État / Institution publique</option>
+                            <option>Défense &amp; Sécurité nationale</option>
+                            <option>Maritime &amp; Pêche industrielle</option>
+                            <option>Industrie &amp; Mines</option>
+                            <option>Télécoms &amp; Médias</option>
+                            <option>Santé &amp; Éducation</option>
+                            <option>Autre</option>
+                        </select>
+                    </div>
+                    <div class="cf-field cf-full">
+                        <label class="cf-label">Votre besoin en connectivité</label>
+                        <textarea class="cf-input cf-textarea" placeholder="Zone géographique, nombre de sites, contraintes de débit, exigences de sécurité…" rows="4"></textarea>
                     </div>
                 </div>
+
+                <button class="elig-btn" style="margin-top:1.25rem;width:100%">
+                    <i class="fas fa-arrow-right"></i> Envoyer ma Demande
+                </button>
+
+                <p style="font-size:0.72rem;color:var(--cx-muted);margin-top:1rem;text-align:center">
+                    <i class="fas fa-lock" style="color:var(--cx-blue);margin-right:.3rem"></i>Données confidentielles · Réponse sous 48h par notre équipe technique
+                </p>
             </div>
 
             <!-- Partenariats -->
