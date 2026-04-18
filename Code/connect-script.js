@@ -1,6 +1,6 @@
 // ==================================
 // GAKI CONNECT – Page Script
-// Sous-menu sticky + Carte + Éligibilité
+// Subnav · Animations · Formulaire B2B
 // ==================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,31 +9,27 @@ document.addEventListener('DOMContentLoaded', () => {
        SUBNAV – Active link on scroll
     ============================== */
     const subnavLinks = document.querySelectorAll('.connect-subnav-link');
-    const sections = ['vision', 'nexuswave', 'souverainete', 'roadmap', 'impact', 'comparison', 'faq', 'institution'];
-    const navbar = document.getElementById('navbar');
-    const subnav = document.getElementById('connectSubnav');
+    const sections    = ['vision', 'nexuswave', 'souverainete', 'roadmap', 'comparison', 'faq', 'institution'];
+    const navbar      = document.getElementById('navbar');
+    const subnav      = document.getElementById('connectSubnav');
 
     function getSubnavHeight() {
         return subnav ? subnav.offsetHeight : 52;
     }
 
     function updateSubnavActive() {
-        const offset = (navbar ? navbar.offsetHeight : 76) + getSubnavHeight() + 20;
-        let current = sections[0];
+        const offset  = (navbar ? navbar.offsetHeight : 76) + getSubnavHeight() + 20;
+        let   current = sections[0];
 
         sections.forEach(id => {
             const el = document.getElementById(id);
             if (!el) return;
-            if (window.scrollY >= el.offsetTop - offset) {
-                current = id;
-            }
+            if (window.scrollY >= el.offsetTop - offset) current = id;
         });
 
         subnavLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('data-section') === current) {
-                link.classList.add('active');
-            }
+            if (link.getAttribute('data-section') === current) link.classList.add('active');
         });
     }
 
@@ -52,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!target) return;
             const navH = navbar ? navbar.offsetHeight : 76;
             const subH = getSubnavHeight();
-            const top = target.getBoundingClientRect().top + window.pageYOffset - navH - subH - 8;
+            const top  = target.getBoundingClientRect().top + window.pageYOffset - navH - subH - 8;
             window.scrollTo({ top, behavior: 'smooth' });
         });
     });
@@ -69,45 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.10, rootMargin: '0px 0px -50px 0px' });
 
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-        animObserver.observe(el);
-    });
-
-    /* ==============================
-       DASHBOARD BAR ANIMATION
-    ============================== */
-    const barObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const fills = entry.target.querySelectorAll('.ndp-bar-fill');
-                fills.forEach(fill => {
-                    fill.style.animation = 'none';
-                    void fill.offsetWidth; // reflow
-                    fill.style.animation = '';
-                });
-                barObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.4 });
-
-    const dashboard = document.querySelector('.nexus-dashboard');
-    if (dashboard) barObserver.observe(dashboard);
-
-    /* ==============================
-       SENEGAL MAP – .map-active trigger
-    ============================== */
-    const mapSvg = document.getElementById('senegalMap');
-    if (mapSvg) {
-        const mapObserver = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    mapSvg.classList.add('map-active');
-                    mapObserver.unobserve(mapSvg);
-                }
-            });
-        }, { threshold: 0.25 });
-        mapObserver.observe(mapSvg);
-    }
+    document.querySelectorAll('.animate-on-scroll').forEach(el => animObserver.observe(el));
 
     /* ==============================
        SCROLL TO TOP
@@ -122,60 +80,110 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* ==============================
+       FORMULAIRE B2B – Soumission
+    ============================== */
+    const form       = document.getElementById('b2bForm');
+    const submitBtn  = document.getElementById('b2bSubmitBtn');
+    const btnIcon    = document.getElementById('b2bBtnIcon');
+    const btnText    = document.getElementById('b2bBtnText');
+    const formMsg    = document.getElementById('b2bFormMsg');
+
+    if (form) {
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            handleB2BSubmit();
+        });
+    }
+
+    function setLoading(state) {
+        submitBtn.disabled = state;
+        if (state) {
+            btnIcon.className = 'fas fa-spinner fa-spin';
+            btnText.textContent = 'Envoi en cours…';
+        } else {
+            btnIcon.className = 'fas fa-paper-plane';
+            btnText.textContent = 'Envoyer ma Demande';
+        }
+    }
+
+    function showMsg(type, html) {
+        formMsg.className  = 'cf-form-msg ' + type;
+        formMsg.innerHTML  = html;
+        formMsg.style.display = 'flex';
+        formMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function validateForm() {
+        const name    = document.getElementById('cf-name').value.trim();
+        const org     = document.getElementById('cf-org').value.trim();
+        const email   = document.getElementById('cf-email').value.trim();
+        const sector  = document.getElementById('cf-sector').value;
+        const need    = document.getElementById('cf-need').value.trim();
+        const emailRE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!name)           return 'Veuillez indiquer votre nom et prénom.';
+        if (!org)            return 'Veuillez indiquer votre organisation.';
+        if (!email)          return 'Veuillez renseigner votre adresse email.';
+        if (!emailRE.test(email)) return 'Adresse email invalide.';
+        if (!sector)         return 'Veuillez sélectionner votre secteur d\'activité.';
+        if (!need)           return 'Veuillez décrire votre besoin en connectivité.';
+        return null;
+    }
+
+    function handleB2BSubmit() {
+        formMsg.style.display = 'none';
+
+        const err = validateForm();
+        if (err) {
+            showMsg('error', '<i class="fas fa-exclamation-circle"></i> ' + err);
+            return;
+        }
+
+        const name   = document.getElementById('cf-name').value.trim();
+        const org    = document.getElementById('cf-org').value.trim();
+        const email  = document.getElementById('cf-email').value.trim();
+        const phone  = document.getElementById('cf-phone').value.trim();
+        const sector = document.getElementById('cf-sector').value;
+        const need   = document.getElementById('cf-need').value.trim();
+
+        setLoading(true);
+
+        // Construction du mailto avec toutes les données
+        const subject = encodeURIComponent('[GAKI Connect] Demande d\'étude technique – ' + org);
+        const body    = encodeURIComponent(
+            'NOM & PRÉNOM : ' + name + '\n' +
+            'ORGANISATION : ' + org + '\n' +
+            'EMAIL         : ' + email + '\n' +
+            (phone ? 'TÉLÉPHONE     : ' + phone + '\n' : '') +
+            'SECTEUR       : ' + sector + '\n\n' +
+            'BESOIN EN CONNECTIVITÉ :\n' + need + '\n\n' +
+            '---\nDemande envoyée depuis gaki-connect.html'
+        );
+
+        const mailto = 'mailto:gakigroup@outlook.com?subject=' + subject + '&body=' + body;
+
+        // Délai court pour que l'état loading soit perceptible
+        setTimeout(() => {
+            setLoading(false);
+            window.location.href = mailto;
+            showMsg(
+                'success',
+                '<i class="fas fa-check-circle"></i> ' +
+                'Votre client de messagerie va s\'ouvrir avec les informations pré-remplies. ' +
+                'Envoyez l\'email pour finaliser votre demande — notre équipe répondra sous 48h.'
+            );
+        }, 600);
+    }
+
 });
 
 /* ==============================
    FAQ TOGGLE
 ============================== */
 function toggleFaq(btn) {
-    const item = btn.closest('.faq-item');
+    const item    = btn.closest('.faq-item');
     const wasOpen = item.classList.contains('open');
-    // Close all open items
     document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-    // Open clicked one if it wasn't already open
     if (!wasOpen) item.classList.add('open');
-}
-
-/* ==============================
-   ELIGIBILITY CHECKER
-============================== */
-function checkEligibility() {
-    const select = document.getElementById('eligZone');
-    const result = document.getElementById('eligResult');
-    if (!select || !result) return;
-
-    const zone = select.value;
-
-    if (!zone) {
-        result.className = 'elig-result show unavailable';
-        result.innerHTML = '<i class="fas fa-info-circle"></i> Veuillez sélectionner votre région.';
-        return;
-    }
-
-    const covered = ['dakar', 'thies', 'sl', 'maritime'];
-    const soon    = ['matam', 'tamb', 'zig', 'kedougou'];
-
-    if (covered.includes(zone)) {
-        result.className = 'elig-result show';
-        const zoneNames = {
-            dakar: 'Dakar & Grand Dakar',
-            thies: 'Thiès & Mbour',
-            sl: 'Saint-Louis & Louga',
-            maritime: 'Zone Maritime / Flotte Nationale'
-        };
-        result.innerHTML = `<i class="fas fa-check-circle"></i>&nbsp; <span><strong>${zoneNames[zone]}</strong> — Zone prioritaire GAKI Connect. Contactez-nous pour initier le déploiement dans votre secteur.</span>`;
-    } else if (soon.includes(zone)) {
-        result.className = 'elig-result show unavailable';
-        const zoneNames = {
-            matam: 'Matam & Kaffrine',
-            tamb: 'Tambacounda & Kolda',
-            zig: 'Ziguinchor (Casamance)',
-            kedougou: 'Kédougou & Sédhiou',
-            rural: 'Zone Rurale / Isolée'
-        };
-        result.innerHTML = `<i class="fas fa-satellite"></i>&nbsp; <span><strong>${zoneNames[zone] || 'Cette zone'}</strong> — Déploiement planifié en phase 2. Inscrivez-vous pour être informé en priorité.</span>`;
-    } else {
-        result.className = 'elig-result show unavailable';
-        result.innerHTML = '<i class="fas fa-satellite"></i>&nbsp; <span>Zone en cours d\'évaluation. Contactez-nous pour une étude personnalisée.</span>';
-    }
 }
