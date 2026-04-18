@@ -808,17 +808,78 @@
 
 
     /* ---- INSTITUTION SECTION ---- */
+    .institution-section-wrap { position: relative; overflow: hidden; }
+    .institution-section-wrap::before {
+        content: '';
+        position: absolute;
+        top: -180px; left: 50%;
+        width: 700px; height: 700px;
+        transform: translateX(-50%);
+        background: radial-gradient(circle, rgba(10,110,255,0.07) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: 0;
+    }
+    .institution-section-wrap > .cx-container { position: relative; z-index: 1; }
+
     .institution-layout {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 3.5rem;
+        gap: 2.5rem;
     }
 
     .eligibility-module {
-        background: var(--cx-card-bg);
-        border: 1px solid var(--cx-border);
+        background: linear-gradient(160deg, rgba(14,28,62,0.95) 0%, rgba(8,16,40,0.98) 100%);
+        border: 1px solid rgba(10,110,255,0.22);
         border-radius: 20px;
         padding: 2.5rem;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+    }
+    .eligibility-module::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, var(--cx-blue), rgba(77,154,255,0.6), var(--cx-blue), transparent);
+        border-radius: 20px 20px 0 0;
+    }
+    .eligibility-module::after {
+        content: '';
+        position: absolute;
+        top: 0; right: -60px;
+        width: 200px; height: 200px;
+        background: radial-gradient(circle, rgba(10,110,255,0.08) 0%, transparent 70%);
+        pointer-events: none;
+    }
+
+    .form-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    .form-header-icon {
+        width: 44px; height: 44px; flex-shrink: 0;
+        background: linear-gradient(135deg, var(--cx-blue), var(--cx-blue-dim));
+        border-radius: 12px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1rem; color: #fff;
+        box-shadow: 0 4px 16px var(--cx-blue-glow);
+    }
+    .form-header-text { flex: 1; }
+    .form-header-badge {
+        display: inline-flex; align-items: center; gap: 0.35rem;
+        background: rgba(10,110,255,0.12);
+        border: 1px solid rgba(10,110,255,0.25);
+        border-radius: 50px;
+        padding: 0.2rem 0.7rem;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(77,154,255,0.9);
+        margin-bottom: 0.45rem;
     }
 
     .eligibility-module h3 {
@@ -826,15 +887,17 @@
         font-family: 'Montserrat', sans-serif;
         font-size: 1.1rem;
         font-weight: 700;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0;
         border: none;
         padding: 0;
+        line-height: 1.35;
     }
 
-    .eligibility-module p {
+    .eligibility-module > p {
         color: var(--cx-muted);
-        font-size: 0.85rem;
+        font-size: 0.84rem;
         margin-bottom: 1.75rem;
+        line-height: 1.65;
     }
 
     .elig-select {
@@ -866,14 +929,14 @@
 
     .elig-btn {
         width: 100%;
-        background: linear-gradient(135deg, var(--cx-blue), var(--cx-blue-dim));
+        background: linear-gradient(135deg, var(--cx-blue) 0%, var(--cx-blue-dim) 60%, rgba(10,80,200,0.85) 100%);
         color: #fff;
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         font-size: 0.88rem;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.07em;
         text-transform: uppercase;
-        padding: 0.9rem 1.5rem;
+        padding: 1rem 1.5rem;
         border: none;
         border-radius: 12px;
         cursor: pointer;
@@ -881,13 +944,23 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 0.5rem;
-        box-shadow: 0 4px 16px var(--cx-blue-glow);
+        gap: 0.55rem;
+        box-shadow: 0 4px 20px var(--cx-blue-glow), inset 0 1px 0 rgba(255,255,255,0.12);
+        position: relative;
+        overflow: hidden;
     }
-
+    .elig-btn::before {
+        content: '';
+        position: absolute;
+        top: 0; left: -100%;
+        width: 100%; height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        transition: left 0.5s ease;
+    }
+    .elig-btn:hover::before { left: 100%; }
     .elig-btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(10,110,255,0.45);
+        box-shadow: 0 8px 28px rgba(10,110,255,0.5), inset 0 1px 0 rgba(255,255,255,0.15);
     }
 
     .elig-result {
@@ -988,31 +1061,33 @@
     .contact-form-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 0.9rem;
+        gap: 1rem;
     }
-    .cf-field { display: flex; flex-direction: column; gap: 0.4rem; }
+    .cf-field { display: flex; flex-direction: column; gap: 0.45rem; }
     .cf-field.cf-full { grid-column: 1 / -1; }
     .cf-label {
         font-family: 'Montserrat', sans-serif;
-        font-weight: 600; font-size: 0.73rem;
-        text-transform: uppercase; letter-spacing: 0.07em;
-        color: rgba(255,255,255,0.6);
+        font-weight: 700; font-size: 0.7rem;
+        text-transform: uppercase; letter-spacing: 0.08em;
+        color: rgba(255,255,255,0.65);
     }
     .cf-input {
-        background: rgba(10,110,255,0.06);
-        border: 1px solid rgba(10,110,255,0.22);
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(10,110,255,0.2);
         border-radius: 10px;
-        padding: 0.75rem 1rem;
-        color: rgba(255,255,255,0.85);
+        padding: 0.8rem 1rem;
+        color: rgba(255,255,255,0.88);
         font-family: 'Inter', sans-serif;
         font-size: 0.87rem;
         outline: none;
-        transition: border-color 0.25s, box-shadow 0.25s;
+        transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
         width: 100%;
     }
-    .cf-input::placeholder { color: rgba(255,255,255,0.28); }
+    .cf-input::placeholder { color: rgba(255,255,255,0.22); }
+    .cf-input:hover { border-color: rgba(10,110,255,0.35); }
     .cf-input:focus {
-        border-color: rgba(10,110,255,0.5);
+        border-color: rgba(10,110,255,0.55);
+        background: rgba(10,110,255,0.06);
         box-shadow: 0 0 0 3px rgba(10,110,255,0.1);
     }
     .cf-select {
@@ -1024,26 +1099,26 @@
         cursor: pointer;
     }
     .cf-select option { background: #0A1830; color: #fff; }
-    .cf-textarea { resize: vertical; min-height: 90px; }
+    .cf-textarea { resize: vertical; min-height: 100px; }
     .cf-required { color: var(--cx-gold-lt); font-weight: 700; }
     /* Feedback message */
     .cf-form-msg {
-        padding: 0.85rem 1.1rem;
+        padding: 0.9rem 1.1rem;
         border-radius: 10px;
-        font-size: 0.85rem;
+        font-size: 0.84rem;
         display: flex;
         align-items: center;
         gap: 0.6rem;
         margin-top: 1rem;
     }
     .cf-form-msg.success {
-        background: rgba(16,185,129,0.1);
-        border: 1px solid rgba(16,185,129,0.35);
+        background: rgba(16,185,129,0.08);
+        border: 1px solid rgba(16,185,129,0.3);
         color: rgba(100,255,180,0.92);
     }
     .cf-form-msg.error {
-        background: rgba(239,68,68,0.08);
-        border: 1px solid rgba(239,68,68,0.3);
+        background: rgba(239,68,68,0.07);
+        border: 1px solid rgba(239,68,68,0.28);
         color: rgba(252,129,129,0.92);
     }
     /* Btn loading state */
@@ -1055,12 +1130,31 @@
 
     /* ---- PARTNER PANEL ---- */
     .partner-panel {
-        background: linear-gradient(135deg, rgba(10,110,255,0.07), rgba(10,110,255,0.03));
-        border: 1px solid rgba(10,110,255,0.18);
+        background: linear-gradient(160deg, rgba(20,14,6,0.95) 0%, rgba(12,9,4,0.98) 100%);
+        border: 1px solid rgba(193,39,53,0.2);
         border-radius: 20px;
         padding: 2.5rem;
         display: flex;
         flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+    }
+    .partner-panel::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, var(--cx-gold), var(--cx-gold-lt), var(--cx-gold), transparent);
+        border-radius: 20px 20px 0 0;
+    }
+    .partner-panel::after {
+        content: '';
+        position: absolute;
+        top: 0; right: -60px;
+        width: 200px; height: 200px;
+        background: radial-gradient(circle, rgba(193,39,53,0.07) 0%, transparent 70%);
+        pointer-events: none;
     }
     .partner-panel > h3 {
         color: #fff;
@@ -1070,16 +1164,29 @@
         margin-bottom: 0.5rem;
         border: none; padding: 0;
     }
+    .partner-panel-badge {
+        display: inline-flex; align-items: center; gap: 0.35rem;
+        background: rgba(193,39,53,0.12);
+        border: 1px solid rgba(193,39,53,0.28);
+        border-radius: 50px;
+        padding: 0.2rem 0.7rem;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--cx-gold-lt);
+        margin-bottom: 0.75rem;
+    }
     .partner-intro {
         color: var(--cx-muted);
-        font-size: 0.85rem;
+        font-size: 0.84rem;
         line-height: 1.65;
         margin-bottom: 1.75rem;
     }
     .partner-types {
         display: flex;
         flex-direction: column;
-        gap: 0.85rem;
+        gap: 0.75rem;
         flex: 1;
         margin-bottom: 2rem;
     }
@@ -1087,38 +1194,49 @@
         display: flex;
         align-items: flex-start;
         gap: 1rem;
-        background: rgba(255,255,255,0.03);
-        border: 1px solid rgba(10,110,255,0.13);
+        background: rgba(255,255,255,0.025);
+        border: 1px solid rgba(193,39,53,0.12);
         border-radius: 14px;
-        padding: 1.1rem 1.25rem;
-        transition: border-color 0.3s, background 0.3s;
+        padding: 1rem 1.2rem;
+        transition: border-color 0.3s, background 0.3s, transform 0.3s;
     }
     .partner-type-card:hover {
-        background: rgba(10,110,255,0.07);
-        border-color: rgba(10,110,255,0.3);
+        background: rgba(193,39,53,0.06);
+        border-color: rgba(193,39,53,0.28);
+        transform: translateX(4px);
     }
     .pt-icon {
-        width: 38px; height: 38px;
-        background: rgba(10,110,255,0.12);
-        border: 1px solid rgba(10,110,255,0.25);
+        width: 40px; height: 40px;
         border-radius: 10px;
         display: flex; align-items: center; justify-content: center;
         flex-shrink: 0;
         font-size: 0.95rem;
-        color: var(--cx-blue);
+        color: #fff;
+    }
+    .pt-icon.pi-etat {
+        background: linear-gradient(135deg, var(--cx-blue), var(--cx-blue-dim));
+        box-shadow: 0 4px 12px var(--cx-blue-glow);
+    }
+    .pt-icon.pi-defense {
+        background: linear-gradient(135deg, #C12735, #8B1E28);
+        box-shadow: 0 4px 12px rgba(193,39,53,0.35);
+    }
+    .pt-icon.pi-industry {
+        background: linear-gradient(135deg, #C8922A, #8B6319);
+        box-shadow: 0 4px 12px rgba(200,146,42,0.35);
     }
     .partner-type-card strong {
         display: block;
         color: rgba(255,255,255,0.92);
         font-family: 'Montserrat', sans-serif;
-        font-size: 0.88rem;
+        font-size: 0.87rem;
         font-weight: 700;
         margin-bottom: 0.2rem;
     }
     .partner-type-card span {
         color: var(--cx-muted);
-        font-size: 0.78rem;
-        line-height: 1.5;
+        font-size: 0.77rem;
+        line-height: 1.55;
     }
 
     /* ---- FOOTER overrides ---- */
@@ -1550,38 +1668,74 @@
     }
 
     /* ---- POLES D'INTERVENTION ---- */
+    .poles-section-label {
+        display: flex; align-items: center; justify-content: center;
+        gap: 0.6rem; margin-bottom: 2rem;
+    }
+    .poles-section-label::before, .poles-section-label::after {
+        content: ''; flex: 1; max-width: 80px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(10,110,255,0.3));
+    }
+    .poles-section-label::after {
+        background: linear-gradient(90deg, rgba(10,110,255,0.3), transparent);
+    }
+
     .poles-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 1.25rem;
-        margin-top: 2.5rem;
+        gap: 1.5rem;
+        margin-top: 0;
     }
     .pole-card {
         background: var(--cx-card-bg);
         border: 1px solid var(--cx-border);
-        border-radius: 16px;
-        padding: 1.75rem;
+        border-radius: 18px;
+        padding: 2rem 1.75rem;
         transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
     }
-    .pole-card:hover {
-        background: rgba(10,110,255,0.07);
-        border-color: rgba(10,110,255,0.35);
-        transform: translateY(-4px);
+    .pole-card::after {
+        content: '';
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        height: 2px;
+        opacity: 0;
+        transition: opacity 0.3s;
     }
+    .pole-card:nth-child(1)::after { background: linear-gradient(90deg, transparent, var(--cx-blue), transparent); }
+    .pole-card:nth-child(2)::after { background: linear-gradient(90deg, transparent, #C12735, transparent); }
+    .pole-card:nth-child(3)::after { background: linear-gradient(90deg, transparent, #C8922A, transparent); }
+    .pole-card:hover::after { opacity: 1; }
+    .pole-card:nth-child(1):hover { background: rgba(10,110,255,0.06); border-color: rgba(10,110,255,0.35); transform: translateY(-5px); }
+    .pole-card:nth-child(2):hover { background: rgba(193,39,53,0.06); border-color: rgba(193,39,53,0.3); transform: translateY(-5px); }
+    .pole-card:nth-child(3):hover { background: rgba(200,146,42,0.06); border-color: rgba(200,146,42,0.3); transform: translateY(-5px); }
+
     .pole-card-icon {
-        width: 46px; height: 46px; border-radius: 12px;
-        background: linear-gradient(135deg, var(--cx-blue), var(--cx-blue-dim));
+        width: 48px; height: 48px; border-radius: 13px;
         display: flex; align-items: center; justify-content: center;
-        font-size: 1.1rem; color: #fff; margin-bottom: 1.1rem;
-        box-shadow: 0 4px 14px var(--cx-blue-glow);
+        font-size: 1.1rem; color: #fff; margin-bottom: 1.25rem;
+    }
+    .pole-card:nth-child(1) .pole-card-icon {
+        background: linear-gradient(135deg, var(--cx-blue), var(--cx-blue-dim));
+        box-shadow: 0 4px 16px var(--cx-blue-glow);
+    }
+    .pole-card:nth-child(2) .pole-card-icon {
+        background: linear-gradient(135deg, #C12735, #8B1E28);
+        box-shadow: 0 4px 16px rgba(193,39,53,0.4);
+    }
+    .pole-card:nth-child(3) .pole-card-icon {
+        background: linear-gradient(135deg, #C8922A, #8B6319);
+        box-shadow: 0 4px 16px rgba(200,146,42,0.4);
     }
     .pole-card h4 {
         font-family: 'Montserrat', sans-serif;
-        font-size: 0.92rem; font-weight: 700; color: #fff;
-        margin-bottom: 0.6rem; border: none; padding: 0;
+        font-size: 0.93rem; font-weight: 700; color: #fff;
+        margin-bottom: 0.65rem; border: none; padding: 0;
     }
     .pole-card p {
-        font-size: 0.82rem; color: var(--cx-muted); line-height: 1.65; margin: 0;
+        font-size: 0.82rem; color: var(--cx-muted); line-height: 1.68; margin: 0;
     }
     .btn-cx-strategic {
         display: inline-flex; align-items: center; gap: 0.6rem;
@@ -2201,7 +2355,7 @@
 <!-- ================================
      6. ESPACE INSTITUTIONNEL
 ================================ -->
-<section id="institution" class="cx-section">
+<section id="institution" class="cx-section institution-section-wrap">
     <div class="cx-container animate-on-scroll">
         <span class="cx-section-badge gold-badge"><i class="fas fa-landmark"></i> Partenariats Stratégiques</span>
         <h2>Partenariats &amp; <span class="gold">Solutions Stratégiques</span></h2>
@@ -2213,7 +2367,13 @@
         <div class="institution-layout">
             <!-- Formulaire de contact B2B -->
             <div class="eligibility-module">
-                <h3><i class="fas fa-paper-plane" style="color:var(--cx-blue);margin-right:0.6rem"></i>Demander une Étude Technique</h3>
+                <div class="form-header">
+                    <div class="form-header-icon"><i class="fas fa-paper-plane"></i></div>
+                    <div class="form-header-text">
+                        <div class="form-header-badge"><i class="fas fa-circle-check" style="font-size:0.6rem"></i> Étude Gratuite · Réponse 48h</div>
+                        <h3>Demander une Étude Technique</h3>
+                    </div>
+                </div>
                 <p style="margin-bottom:1.5rem">Décrivez votre projet de connectivité. Nos ingénieurs analysent vos contraintes opérationnelles et vous proposent une architecture sur mesure sous 48h.</p>
 
                 <form id="b2bForm" novalidate>
@@ -2268,26 +2428,27 @@
 
             <!-- Partenariats -->
             <div class="partner-panel">
+                <div class="partner-panel-badge"><i class="fas fa-shield-halved" style="font-size:0.6rem"></i> Accès Grands Comptes &amp; Institutionnel</div>
                 <h3>Partenariats Institutionnels &amp; Grands Comptes</h3>
                 <p class="partner-intro">Gaki Connect s'adresse aux structures exigeant une résilience absolue et une souveraineté totale de leurs échanges. Contactez notre direction stratégique pour une solution sur mesure.</p>
 
                 <div class="partner-types">
                     <div class="partner-type-card">
-                        <div class="pt-icon"><i class="fas fa-landmark"></i></div>
+                        <div class="pt-icon pi-etat"><i class="fas fa-landmark"></i></div>
                         <div>
                             <strong>États &amp; Institutions Publiques</strong>
                             <span>Garantie de souveraineté numérique, conformité ARTP et sécurisation des services publics sans transit international.</span>
                         </div>
                     </div>
                     <div class="partner-type-card">
-                        <div class="pt-icon"><i class="fas fa-shield-halved"></i></div>
+                        <div class="pt-icon pi-defense"><i class="fas fa-shield-halved"></i></div>
                         <div>
                             <strong>Défense &amp; Sécurité Nationale</strong>
                             <span>Infrastructures critiques dédiées, chiffrement de grade militaire et couverture totale des eaux territoriales.</span>
                         </div>
                     </div>
                     <div class="partner-type-card">
-                        <div class="pt-icon"><i class="fas fa-industry"></i></div>
+                        <div class="pt-icon pi-industry"><i class="fas fa-industry"></i></div>
                         <div>
                             <strong>Entreprises &amp; Industries Critiques</strong>
                             <span>SLA de 99,99%, bande passante garantie et support d'élite 24/7 pour les secteurs miniers, maritimes et bancaires.</span>
@@ -2302,8 +2463,8 @@
         </div>
 
         <!-- Pôles d'intervention -->
-        <div class="animate-on-scroll" style="margin-top:4rem;">
-            <p class="steps-label" style="margin-bottom:1.5rem"><i class="fas fa-crosshairs" style="margin-right:.4rem"></i>LES PÔLES D'INTERVENTION</p>
+        <div class="animate-on-scroll" style="margin-top:4.5rem;">
+            <p class="steps-label poles-section-label"><i class="fas fa-crosshairs" style="margin-right:.4rem"></i>LES PÔLES D'INTERVENTION</p>
             <div class="poles-grid">
                 <div class="pole-card">
                     <div class="pole-card-icon"><i class="fas fa-flag"></i></div>

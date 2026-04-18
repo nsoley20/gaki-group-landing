@@ -1448,33 +1448,87 @@ h2 {
 /* ================================
    CONTACT
 ================================ */
+/* ---- CONTACT SECTION background ---- */
+#contact {
+    background: linear-gradient(160deg, #F2EEF9 0%, #FBF9FE 45%, #F5F0FC 100%) !important;
+    position: relative;
+    overflow: hidden;
+}
+#contact::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(88,51,127,0.06) 0%, transparent 70%);
+    pointer-events: none;
+}
+#contact::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, rgba(193,39,53,0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* ---- CONTACT INFO PANEL ---- */
+.contact-info-panel {
+    background: #fff;
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 32px rgba(88,51,127,0.1);
+    border: 1px solid rgba(88,51,127,0.07);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.contact-info-panel h3 {
+    color: var(--gaki-night) !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
 .contact-info-item {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
+    padding: 1rem 0.75rem;
+    border-radius: 14px;
+    transition: background 0.25s;
+    margin-bottom: 0.25rem;
+}
+
+.contact-info-item:hover {
+    background: rgba(88,51,127,0.04);
 }
 
 .contact-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
+    width: 46px;
+    height: 46px;
+    border-radius: 13px;
     background: linear-gradient(135deg, var(--gaki-purple), var(--gaki-red));
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #fff;
     flex-shrink: 0;
-    box-shadow: 0 4px 15px rgba(74,44,127,0.3);
+    box-shadow: 0 4px 14px rgba(74,44,127,0.28);
 }
 
 .contact-info-item h4 {
     color: var(--gaki-purple);
-    font-size: 0.88rem;
+    font-size: 0.75rem;
     font-weight: 700;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.2rem;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.07em;
     border: none;
     padding: 0;
 }
@@ -1487,40 +1541,125 @@ h2 {
 
 .map-placeholder {
     background: linear-gradient(135deg, var(--gaki-purple), var(--gaki-red));
-    border-radius: 20px;
-    padding: 2.5rem 2rem;
+    border-radius: 18px;
+    padding: 2.25rem 2rem;
     text-align: center;
     color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: auto;
+    position: relative;
+    overflow: hidden;
+}
+.map-placeholder::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 150px; height: 150px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
 }
 
 .map-btn {
     display: inline-flex;
     align-items: center;
+    gap: 0.4rem;
     margin-top: 1rem;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.18);
     color: #fff;
-    border: 2px solid rgba(255,255,255,0.4);
-    padding: 0.6rem 1.5rem;
+    border: 1.5px solid rgba(255,255,255,0.45);
+    padding: 0.6rem 1.4rem;
     border-radius: 50px;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 700;
     transition: var(--transition);
+    text-decoration: none;
 }
 
 .map-btn:hover {
-    background: rgba(255,255,255,0.35);
-    border-color: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.32);
+    border-color: rgba(255,255,255,0.85);
+    transform: translateY(-2px);
 }
 
+/* ---- CONTACT FORM CARD ---- */
 .contact-form-card {
     background: #fff;
     padding: 3rem;
-    border-radius: var(--radius-card);
-    box-shadow: 0 8px 48px rgba(88,51,127,0.12);
+    border-radius: 24px;
+    box-shadow: 0 8px 50px rgba(88,51,127,0.13);
     border: 1px solid rgba(88,51,127,0.08);
+    position: relative;
+    overflow: hidden;
+}
+.contact-form-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gaki-red), var(--gaki-purple), var(--gaki-red));
+    border-radius: 24px 24px 0 0;
+}
+
+.contact-form-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+}
+.contact-form-icon {
+    width: 46px; height: 46px;
+    background: linear-gradient(135deg, var(--gaki-red), var(--gaki-purple));
+    border-radius: 13px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; color: #fff; flex-shrink: 0;
+    box-shadow: 0 4px 16px rgba(193,39,53,0.3);
+}
+.contact-form-title {
+    flex: 1;
+}
+.contact-form-title-badge {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    background: rgba(88,51,127,0.08);
+    border: 1px solid rgba(88,51,127,0.15);
+    border-radius: 50px;
+    padding: 0.18rem 0.65rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gaki-purple);
+    margin-bottom: 0.3rem;
+}
+.contact-form-title h3 {
+    color: var(--gaki-night) !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 1.05rem;
+    font-weight: 700;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Feedback message */
+.contact-form-msg {
+    display: none;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.1rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
+}
+.contact-form-msg.success {
+    background: rgba(16,185,129,0.07);
+    border: 1px solid rgba(16,185,129,0.3);
+    color: #065f46;
+}
+.contact-form-msg.error {
+    background: rgba(193,39,53,0.06);
+    border: 1px solid rgba(193,39,53,0.2);
+    color: #7f1d1d;
 }
 
 /* ================================
@@ -1528,32 +1667,44 @@ h2 {
 ================================ */
 .form-label {
     display: block;
-    font-size: 0.82rem;
-    font-weight: 600;
+    font-size: 0.75rem;
+    font-weight: 700;
     color: var(--gaki-black);
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.02em;
+    margin-bottom: 0.45rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
 }
 
 .form-input {
     width: 100%;
-    border: 2px solid var(--gaki-gray);
-    border-radius: 14px;
-    padding: 1rem 1.1rem;
-    font-size: 0.93rem;
+    border: 1.5px solid #E5E0F0;
+    border-radius: 12px;
+    padding: 0.9rem 1.1rem;
+    font-size: 0.92rem;
     font-family: 'Poppins', Arial, sans-serif;
-    transition: var(--transition);
-    background: var(--gaki-gray-light);
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    background: #FAF8FE;
     color: #1a1a1a;
     outline: none;
 }
 
-.form-input::placeholder { color: #aaa; }
+.form-input::placeholder { color: #b0a8c8; }
+
+.form-input:hover { border-color: rgba(88,51,127,0.35); }
 
 .form-input:focus {
     border-color: var(--gaki-purple);
     background: #fff;
-    box-shadow: 0 0 0 4px rgba(88,51,127,0.10);
+    box-shadow: 0 0 0 3px rgba(88,51,127,0.09);
+}
+
+.form-select {
+    appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235833AA' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
 }
 
 .btn-primary {

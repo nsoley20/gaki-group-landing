@@ -478,7 +478,7 @@ Notre approche repose sur une synergie unique : combiner la puissance d'un grand
 <!-- ================================
      CONTACT
 ================================ -->
-<section id="contact" class="page-section" style="background:#F8F9FC;">
+<section id="contact" class="page-section">
     <div class="section-container animate-on-scroll">
         <div class="section-header">
             <span class="section-badge">Parlons-nous</span>
@@ -486,10 +486,11 @@ Notre approche repose sur une synergie unique : combiner la puissance d'un grand
             <div class="section-divider mx-auto"></div>
         </div>
 
-        <div class="contact-grid" style="display:grid; grid-template-columns:1fr 1.3fr; gap:3rem; align-items:start;">
-            <div class="space-y-6">
-                <h3 class="text-xl font-semibold mb-5" style="color:var(--gaki-night); border:none; padding:0; font-family:'Montserrat',sans-serif;">Nos coordonnées</h3>
-                <div class="space-y-4">
+        <div class="contact-grid" style="display:grid; grid-template-columns:1fr 1.4fr; gap:2.5rem; align-items:start;">
+            <!-- Colonne gauche : coordonnées -->
+            <div class="contact-info-panel">
+                <h3>Nos coordonnées</h3>
+                <div>
                     <div class="contact-info-item">
                         <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div>
@@ -519,32 +520,39 @@ Notre approche repose sur une synergie unique : combiner la puissance d'un grand
                         </div>
                     </div>
                 </div>
-                <div class="map-placeholder">
-                    <i class="fas fa-map-marked-alt text-4xl mb-3 opacity-80"></i>
-                    <p class="font-bold">3 Rue Béranger Féraud · Dakar-Plateau</p>
-                    <a href="https://maps.google.com/?q=3+Rue+Beranger+Feraud+Dakar+Plateau+Senegal" target="_blank" rel="noopener noreferrer" class="map-btn mt-3">
-                        <i class="fas fa-external-link-alt mr-2"></i>Voir sur Google Maps
+                <div class="map-placeholder" style="margin-top:1.5rem">
+                    <i class="fas fa-map-marked-alt" style="font-size:2.5rem;margin-bottom:0.75rem;opacity:0.9"></i>
+                    <p style="font-weight:700;font-size:0.95rem">3 Rue Béranger Féraud · Dakar-Plateau</p>
+                    <a href="https://maps.google.com/?q=3+Rue+Beranger+Feraud+Dakar+Plateau+Senegal" target="_blank" rel="noopener noreferrer" class="map-btn">
+                        <i class="fas fa-external-link-alt"></i>Voir sur Google Maps
                     </a>
                 </div>
             </div>
 
+            <!-- Colonne droite : formulaire -->
             <div class="contact-form-card">
-                <h3 class="text-xl font-semibold mb-5" style="color:var(--gaki-night); border:none; padding:0; font-family:'Montserrat',sans-serif;">Envoyez-nous un message</h3>
-                <!-- Formspree : remplacez YOUR_FORM_ID par votre ID sur formspree.io -->
-                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
+                <div class="contact-form-header">
+                    <div class="contact-form-icon"><i class="fas fa-paper-plane"></i></div>
+                    <div class="contact-form-title">
+                        <div class="contact-form-title-badge"><i class="fas fa-circle-check" style="font-size:0.55rem"></i> Réponse sous 24h</div>
+                        <h3>Envoyez-nous un message</h3>
+                    </div>
+                </div>
+
+                <form id="contactForm" novalidate class="space-y-4">
                     <div class="grid grid-cols-2 gap-4">
                         <div>
-                            <label for="nom" class="form-label">Nom et prénom *</label>
-                            <input type="text" id="nom" name="Nom" required class="form-input" placeholder="Mamadou Diallo">
+                            <label for="c-nom" class="form-label">Nom et prénom <span style="color:var(--gaki-red)">*</span></label>
+                            <input type="text" id="c-nom" name="Nom" required class="form-input" placeholder="Mamadou Diallo">
                         </div>
                         <div>
-                            <label for="email" class="form-label">Email *</label>
-                            <input type="email" id="email" name="Email" required class="form-input" placeholder="vous@exemple.sn">
+                            <label for="c-email" class="form-label">Email <span style="color:var(--gaki-red)">*</span></label>
+                            <input type="email" id="c-email" name="Email" required class="form-input" placeholder="vous@exemple.sn">
                         </div>
                     </div>
                     <div>
-                        <label for="sujet" class="form-label">Sujet</label>
-                        <select id="sujet" name="Sujet" class="form-input">
+                        <label for="c-sujet" class="form-label">Sujet</label>
+                        <select id="c-sujet" name="Sujet" class="form-input form-select">
                             <option value="">Choisissez un sujet</option>
                             <option value="GAKI Connect">GAKI Connect — FAI &amp; Souveraineté</option>
                             <option value="GAKI Capital">Alliance GAKI Capital</option>
@@ -557,17 +565,19 @@ Notre approche repose sur une synergie unique : combiner la puissance d'un grand
                         </select>
                     </div>
                     <div>
-                        <label for="message" class="form-label">Message *</label>
-                        <textarea id="message" name="Message" rows="5" required class="form-input resize-none" placeholder="Décrivez votre projet ou votre demande..."></textarea>
+                        <label for="c-message" class="form-label">Message <span style="color:var(--gaki-red)">*</span></label>
+                        <textarea id="c-message" name="Message" rows="5" required class="form-input" style="resize:none" placeholder="Décrivez votre projet ou votre demande..."></textarea>
                     </div>
                     <div class="flex items-start space-x-3">
-                        <input type="checkbox" id="rgpd" name="RGPD" required class="mt-1 flex-shrink-0" style="width:16px;height:16px;accent-color:var(--gaki-gold);">
-                        <label for="rgpd" class="text-sm text-gray-500 leading-relaxed">
+                        <input type="checkbox" id="c-rgpd" required class="mt-1 flex-shrink-0" style="width:16px;height:16px;accent-color:var(--gaki-red);">
+                        <label for="c-rgpd" class="text-sm leading-relaxed" style="color:#6b7280">
                             J'accepte que mes données soient traitées conformément à la politique de confidentialité de GAKI GROUP.
                         </label>
                     </div>
-                    <button type="submit" class="btn-primary">
-                        <i class="fas fa-paper-plane mr-2"></i>Envoyer le message
+                    <div id="contactFormMsg" class="contact-form-msg"></div>
+                    <button type="submit" id="contactSubmitBtn" class="btn-primary">
+                        <i class="fas fa-paper-plane" id="contactBtnIcon" style="margin-right:0.5rem"></i>
+                        <span id="contactBtnText">Envoyer le message</span>
                     </button>
                 </form>
             </div>

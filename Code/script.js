@@ -270,4 +270,63 @@ document.addEventListener('DOMContentLoaded', () => {
     ============================== */
     // Parallax désactivé (gradient background animé incompatible)
 
+    /* ==============================
+       FORMULAIRE CONTACT – mailto handler
+    ============================== */
+    const contactForm    = document.getElementById('contactForm');
+    const contactSubmit  = document.getElementById('contactSubmitBtn');
+    const contactBtnIcon = document.getElementById('contactBtnIcon');
+    const contactBtnText = document.getElementById('contactBtnText');
+    const contactFormMsg = document.getElementById('contactFormMsg');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', e => {
+            e.preventDefault();
+
+            const nom     = document.getElementById('c-nom').value.trim();
+            const email   = document.getElementById('c-email').value.trim();
+            const sujet   = document.getElementById('c-sujet').value;
+            const message = document.getElementById('c-message').value.trim();
+            const rgpd    = document.getElementById('c-rgpd').checked;
+            const emailRE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            contactFormMsg.style.display = 'none';
+            contactFormMsg.className = 'contact-form-msg';
+
+            if (!nom)                     return showContactMsg('error', 'Veuillez indiquer votre nom et prénom.');
+            if (!email)                   return showContactMsg('error', 'Veuillez renseigner votre adresse email.');
+            if (!emailRE.test(email))     return showContactMsg('error', 'Adresse email invalide.');
+            if (!message)                 return showContactMsg('error', 'Veuillez écrire votre message.');
+            if (!rgpd)                    return showContactMsg('error', 'Veuillez accepter la politique de confidentialité.');
+
+            contactSubmit.disabled = true;
+            contactBtnIcon.className = 'fas fa-spinner fa-spin';
+            contactBtnText.textContent = 'Envoi en cours…';
+
+            const subjectLine = encodeURIComponent('[GAKI GROUP] ' + (sujet || 'Message depuis le site') + ' – ' + nom);
+            const body = encodeURIComponent(
+                'NOM & PRÉNOM : ' + nom + '\n' +
+                'EMAIL        : ' + email + '\n' +
+                (sujet ? 'SUJET        : ' + sujet + '\n\n' : '\n') +
+                'MESSAGE :\n' + message + '\n\n' +
+                '---\nEnvoyé depuis gaki-group.com'
+            );
+
+            setTimeout(() => {
+                contactSubmit.disabled = false;
+                contactBtnIcon.className = 'fas fa-paper-plane';
+                contactBtnText.textContent = 'Envoyer le message';
+                window.location.href = 'mailto:gakigroup@outlook.com?subject=' + subjectLine + '&body=' + body;
+                showContactMsg('success', '<i class="fas fa-check-circle" style="margin-right:.4rem"></i>Votre client de messagerie va s\'ouvrir. Envoyez l\'email pour finaliser — nous répondons sous 24h.');
+            }, 600);
+        });
+    }
+
+    function showContactMsg(type, html) {
+        contactFormMsg.className = 'contact-form-msg ' + type;
+        contactFormMsg.innerHTML = html;
+        contactFormMsg.style.display = 'flex';
+        contactFormMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
 });
